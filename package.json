@@ -10,8 +10,12 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.5",
+    "react-native-gesture-handler": "^1.4.1",
     "react-native-nativo-sdk-alpha.1": "^1.0.3-SNAPSHOT.6",
-    "react-native-video": "^5.0.2"
+    "react-native-video": "^5.0.2",
+    "react-native-webview": "^7.2.5",
+    "react-navigation": "^4.0.9",
+    "react-navigation-stack": "^1.9.0"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
