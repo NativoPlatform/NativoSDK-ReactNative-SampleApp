@@ -1,21 +1,18 @@
 package com.reactsample;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.facebook.react.ReactActivity;
 
 import net.nativo.reactsdk.NativeAd;
 import net.nativo.reactsdk.NativeLandingPage;
 import net.nativo.reactsdk.NativeVideoAd;
+import net.nativo.reactsdk.StandardDisplayAd;
 import net.nativo.sdk.NativoSDK;
 import net.nativo.sdk.ntvcore.NtvAdData;
 
 public class MainActivity extends ReactActivity {
 
-    private static final String DRAWABLE = "drawable";
     /**
      * Returns the name of the main component registered from JavaScript.
      * This is used to schedule rendering of the component.
@@ -33,15 +30,9 @@ public class MainActivity extends ReactActivity {
         NativoSDK.getInstance().registerNativeAd(new NativeAd());
         NativoSDK.getInstance().registerVideoAd(new NativeVideoAd());
         NativoSDK.getInstance().registerLandingPage(new NativeLandingPage());
-        NativoSDK.getInstance().enableTestAdvertisements(NtvAdData.NtvAdType.NATIVE);
+        NativoSDK.getInstance().registerStandardDisplayAd(new StandardDisplayAd());
+//        NativoSDK.getInstance().enableTestAdvertisements(NtvAdData.NtvAdType.STANDARD_DISPLAY);
         NativoSDK.getInstance().enableDevLogs();
-        int a = getResourceId(this, "ic_media_play", DRAWABLE);
     }
 
-    private int getResourceId(Context root, String variableName, String resourceName) {
-        Resources resources = root.getResources();
-        final int resourceId = resources.getIdentifier(variableName, resourceName,
-                root.getPackageName());
-        return resourceId;
-    }
 }
