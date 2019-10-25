@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View} from "react-native";
+import React from 'react';
+import {StyleSheet, Text, View} from "react-native";
 import {WebView} from "react-native-webview";
 
 const StandardDisplayAdTemplate = (props) => {
