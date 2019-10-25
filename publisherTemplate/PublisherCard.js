@@ -6,7 +6,7 @@ const PublisherCard = () => {
     let curDate = new Date();
     return (
         <View style={styles.card}>
-            <Image style={styles.cardImage} source={require('./../img/newsimage.jpeg')}/>
+            <Image style={styles.cardImage} source={require('../img/newsimage.jpeg')}/>
             <View>
                 <Text style={{
                     textAlign: 'right',

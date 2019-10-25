@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Button, ScrollView} from 'react-native';
-import PublisherCard from "../components/PublisherCard";
+import {ScrollView, StyleSheet} from 'react-native';
+import PublisherCard from "../publisherTemplate/PublisherCard";
+import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
+import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
+import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
 import NativoAdComponent from "../components/NativoAdComponent";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/'
@@ -18,6 +22,7 @@ export default class ScrollViewPage extends Component<Props> {
     componentDidMount(): void {
         this.checkNodes();
     }
+
     componentDidUpdate() {
         this.checkNodes();
     }
@@ -32,13 +37,22 @@ export default class ScrollViewPage extends Component<Props> {
 
     render() {
         return (
-            <ScrollView contentContainerStyle={{flexGrow: 1, alignItems:'center', justifyItems:'center'}} nativeID={'publisherNativoAdContainer'}>
+            <ScrollView contentContainerStyle={{flexGrow: 1, alignItems: 'center', justifyItems: 'center'}}
+                        nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAdComponent ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl} index={100}/>
+                <NativoAdComponent ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl}
+                                   index={100} nativeAdTemplate={NativeAdTemplate}
+                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
+                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                   landingPageAdTemplate={LandingPageAdTemplate}/>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAdComponent ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl} index={200}/>
+                <NativoAdComponent ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
+                                   index={200} nativeAdTemplate={NativeAdTemplate}
+                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
+                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                   landingPageAdTemplate={LandingPageAdTemplate}/>
             </ScrollView>
         );
     }

@@ -1,19 +1,7 @@
 import React, {Component} from 'react';
-import {
-    findNodeHandle,
-    NativeEventEmitter,
-    requireNativeComponent,
-    StyleSheet,
-    UIManager,
-    View
-} from 'react-native';
-
-import NativeAdTemplate from "./NativeAdTemplate";
-import NativeVideoAdTemplate from "./NativeVideoAdTemplate";
-import StandardDisplayAdTemplate from "./StandardDisplayAdTemplate";
+import {findNodeHandle, NativeEventEmitter, requireNativeComponent, StyleSheet, UIManager, View} from 'react-native';
 
 const NativoAdContainer = requireNativeComponent("NativoContainer");
-
 
 export default class NativoAdComponent extends Component<Props> {
 
@@ -39,14 +27,13 @@ export default class NativoAdComponent extends Component<Props> {
 
 
     componentDidMount(): void {
-        console.log('js componentDidMount called on NativoAdComponent');
         const eventEmitter = new NativeEventEmitter(NativoAdContainer);
         eventEmitter.addListener('EventReminder', (event) => {
-            console.log("js landing page " + event.adId);
             this.props.navigation.navigate('LandingScreen', {
                 sectionUrl: event.sectionUrl,
                 adId: event.adId,
-                containerHash: event.containerHash
+                containerHash: event.containerHash,
+                landingPageAdTemplate: this.props.landingPageAdTemplate
             })
         });
     }
@@ -95,6 +82,9 @@ export default class NativoAdComponent extends Component<Props> {
 
 
     render() {
+        const NativeAdTemplate = this.props.nativeAdTemplate;
+        const NativeVideoAdTemplate = this.props.nativeVideoAdTemplate;
+        const StandardDisplayAdTemplate = this.props.standardDisplayAdTemplate;
         return (
             <View style={styles.container}>
                 <NativoAdContainer ref={(el) => (this._adContainer = el)}

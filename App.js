@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import NativoAdComponent from "./components/NativoAdComponent";
+import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
+import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
+import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
+import LandingPageAdTemplate from "./adTemplates/LandingPageAdTemplate";
 
 var sampleSectionUrl = 'http://www.nativo.net/test/'
 
@@ -38,7 +42,10 @@ export class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <NativoAdComponent ref={c => this._nodes.set(10, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                                   index={10}/>
+                                   index={10} nativeAdTemplate={NativeAdTemplate}
+                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
+                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                   landingPageAdTemplate={LandingPageAdTemplate}/>
             </View>
         );
     }

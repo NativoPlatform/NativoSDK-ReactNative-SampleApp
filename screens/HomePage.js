@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Button} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 
 export default class HomePage extends Component<Props> {
 

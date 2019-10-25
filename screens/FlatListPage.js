@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, FlatList} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import NativoAdComponent from "../components/NativoAdComponent";
-import PublisherCard from "../components/PublisherCard";
+import PublisherCard from "../publisherTemplate/PublisherCard";
+import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
+import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
+import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/';
 
@@ -51,7 +55,11 @@ export default class FlatListPage extends Component {
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
                                   <NativoAdComponent ref={c => this._nodes.set(item.key, c)} {...this.props}
-                                                     sectionUrl={sampleSectionUrl} index={item.key}/>
+                                                     sectionUrl={sampleSectionUrl} index={item.key}
+                                                     nativeAdTemplate={NativeAdTemplate}
+                                                     nativeVideoAdTemplate={NativeVideoAdTemplate}
+                                                     standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                                     landingPageAdTemplate={LandingPageAdTemplate}/>
                                   :
                                   <PublisherCard/>
                           }

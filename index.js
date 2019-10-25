@@ -7,7 +7,7 @@ import App from './App';
 import {name as appName} from './app.json';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import LandingPage from "./screens/LandingPage";
+import NativoLandingPageComponent from "./components/NativoLandingPageComponent";
 import FlatListPage from "./screens/FlatListPage";
 import HomePage from "./screens/HomePage";
 import ScrollViewPage from "./screens/ScrollViewPage";
@@ -17,7 +17,7 @@ const MainNavigator = createStackNavigator({
     StandAloneAdScreen: {screen: App},
     FlatListAdScreen: {screen: FlatListPage},
     ScrollAdScreen: {screen: ScrollViewPage},
-    LandingScreen: {screen: LandingPage},
+    LandingScreen: {screen: NativoLandingPageComponent},
 });
 
 const AppNavigation = createAppContainer(MainNavigator);
