@@ -7,8 +7,8 @@ export class NativoLandingPageComponent extends Component {
 
     componentDidMount(): void {
         UIManager.dispatchViewManagerCommand(
-            findNodeHandle(this.refs.landingContainer),
-            UIManager.NativoLandingPageContainer.Commands.injectAd, []);
+            findNodeHandle(this._landingContainer),
+            UIManager.getViewManagerConfig('NativoLandingPageContainer').Commands.injectAd, []);
     }
 
     static navigationOptions = {
@@ -17,10 +17,10 @@ export class NativoLandingPageComponent extends Component {
 
     render() {
         const {navigation} = this.props;
-        const LandingPageAdTemplate = navigation.getParam('landingPageAdTemplate', 'NO-ID')
+        const LandingPageAdTemplate = navigation.getParam('landingPageAdTemplate', 'NO-ID');
         return (
             <View style={styles.container}>
-                <NativoLandingPageContainer ref="landingContainer" injectLandingPage={{
+                <NativoLandingPageContainer ref={(el) => (this._landingContainer = el)} injectLandingPage={{
                     'url': navigation.getParam('sectionUrl', 'NO-ID'),
                     'containerHash': navigation.getParam('containerHash'),
                     'adId': navigation.getParam('adId')

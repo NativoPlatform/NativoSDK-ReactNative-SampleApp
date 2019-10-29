@@ -40,7 +40,7 @@ export class App extends Component<Props> {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <NativoAdComponent ref={c => this._nodes.set(10, c)} {...this.props} sectionUrl={sampleSectionUrl}
                                    index={10} nativeAdTemplate={NativeAdTemplate}
                                    nativeVideoAdTemplate={NativeVideoAdTemplate}
