@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import NativoAdComponent from "../components/NativoAdComponent";
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
+import NativoAdComponent from "react-native-nativo-sdk-alpha.1/NativoAdComponent";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/';
 

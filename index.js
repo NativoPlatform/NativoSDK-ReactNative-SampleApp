@@ -7,10 +7,10 @@ import App from './App';
 import {name as appName} from './app.json';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import NativoLandingPageComponent from "./components/NativoLandingPageComponent";
 import FlatListPage from "./screens/FlatListPage";
 import HomePage from "./screens/HomePage";
 import ScrollViewPage from "./screens/ScrollViewPage";
+import {NativoLandingPageComponent} from "react-native-nativo-sdk-alpha.1/NativoLandingPageComponent";
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},

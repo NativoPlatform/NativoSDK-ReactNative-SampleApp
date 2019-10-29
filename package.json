@@ -10,12 +10,12 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.5",
-    "react-native-gesture-handler": "^1.4.1",
-    "react-native-nativo-sdk-alpha.1": "^1.0.3-SNAPSHOT.7",
-    "react-native-video": "^5.0.2",
-    "react-native-webview": "^7.4.3",
-    "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^1.10.3"
+    "react-native-gesture-handler": "1.4.1",
+    "react-native-nativo-sdk-alpha.1": "^1.0.3-SNAPSHOT.10",
+    "react-native-video": "5.0.2",
+    "react-native-webview": "7.4.3",
+    "react-navigation": "4.0.10",
+    "react-navigation-stack": "1.10.3"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
