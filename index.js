@@ -11,6 +11,7 @@ import FlatListPage from "./screens/FlatListPage";
 import HomePage from "./screens/HomePage";
 import ScrollViewPage from "./screens/ScrollViewPage";
 import {NativoLandingPageComponent} from "react-native-nativo-sdk-alpha.1/NativoLandingPageComponent";
+import MOAPViewPage from "./screens/MOAPViewPage";
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
@@ -18,6 +19,7 @@ const MainNavigator = createStackNavigator({
     FlatListAdScreen: {screen: FlatListPage},
     ScrollAdScreen: {screen: ScrollViewPage},
     LandingScreen: {screen: NativoLandingPageComponent},
+    MOAPAdScreen: {screen: MOAPViewPage}
 });
 
 const AppNavigation = createAppContainer(MainNavigator);

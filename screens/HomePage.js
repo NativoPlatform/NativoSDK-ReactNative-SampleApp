@@ -22,6 +22,10 @@ export default class HomePage extends Component<Props> {
                     <Button title={'Scroll Ad Page'}
                             onPress={() => this.props.navigation.navigate('ScrollAdScreen')}/>
                 </View>
+                <View style={styles.buttonContainer}>
+                    <Button title={'MOAP Ad Page'}
+                            onPress={() => this.props.navigation.navigate('MOAPAdScreen')}/>
+                </View>
             </View>
         );
     }
