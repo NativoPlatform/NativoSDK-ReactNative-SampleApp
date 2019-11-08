@@ -4,9 +4,9 @@ import {View} from "react-native";
 
 const LandingPageAdTemplate = (props) => {
     return (
-        <View nativeID={'nativoAdWebViewContainer'} style={{flex: 1}}>
+        <View nativeID={'nativoAdWebViewContainer'} style={{flex:1}}>
             <WebView nativeID={'nativoAdWebView'} javaScriptEnabled={true}
-                     domStorageEnabled={true}/>
+                     domStorageEnabled={true} scalesPageToFit={false}/>
         </View>
     );
 };
