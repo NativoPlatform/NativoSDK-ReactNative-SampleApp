@@ -5,7 +5,8 @@ import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
 import LandingPageAdTemplate from "./adTemplates/LandingPageAdTemplate";
-import NativoAdComponent from "react-native-nativo-sdk-alpha.1/NativoAdComponent";
+import PublisherCard from "./publisherTemplate/PublisherCard";
+import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd"
 
 var sampleSectionUrl = 'http://www.nativo.net/test/'
 
@@ -41,7 +42,8 @@ export class App extends Component<Props> {
     render() {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
-                <NativoAdComponent ref={c => this._nodes.set(10, c)} {...this.props} sectionUrl={sampleSectionUrl}
+                <PublisherCard/>
+                <NativoAd ref={c => this._nodes.set(10, c)} {...this.props} sectionUrl={sampleSectionUrl}
                                    index={10} nativeAdTemplate={NativeAdTemplate}
                                    nativeVideoAdTemplate={NativeVideoAdTemplate}
                                    standardDisplayAdTemplate={StandardDisplayAdTemplate}

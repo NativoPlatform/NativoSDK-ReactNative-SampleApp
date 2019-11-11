@@ -5,7 +5,7 @@ import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
-import NativoAdComponent from "react-native-nativo-sdk-alpha.1/NativoAdComponent";
+import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/';
 
@@ -54,7 +54,7 @@ export default class FlatListPage extends Component {
                           ]}
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
-                                  <NativoAdComponent ref={c => this._nodes.set(item.key, c)} {...this.props}
+                                  <NativoAd ref={c => this._nodes.set(item.key, c)} {...this.props}
                                                      sectionUrl={sampleSectionUrl} index={item.key}
                                                      nativeAdTemplate={NativeAdTemplate}
                                                      nativeVideoAdTemplate={NativeVideoAdTemplate}

@@ -5,7 +5,7 @@ import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
-import NativoAdComponent from "react-native-nativo-sdk-alpha.1/NativoAdComponent";
+import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/'
 export default class ScrollViewPage extends Component<Props> {
@@ -41,14 +41,14 @@ export default class ScrollViewPage extends Component<Props> {
                         nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAdComponent ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl}
+                <NativoAd ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl}
                                    index={100} nativeAdTemplate={NativeAdTemplate}
                                    nativeVideoAdTemplate={NativeVideoAdTemplate}
                                    standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                    landingPageAdTemplate={LandingPageAdTemplate}/>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAdComponent ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
+                <NativoAd ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
                                    index={200} nativeAdTemplate={NativeAdTemplate}
                                    nativeVideoAdTemplate={NativeVideoAdTemplate}
                                    standardDisplayAdTemplate={StandardDisplayAdTemplate}
