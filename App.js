@@ -39,15 +39,23 @@ export class App extends Component<Props> {
         title: 'Nativo React Sample App',
     };
 
+    needsDisplayClickOutURL = (url) => {
+        console.log("needsDisplayClickOutURL App.js ", url);
+        this.props.navigation.navigate('ClickOutScreen', {
+            url: url,
+        })
+    }
+
     render() {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <NativoAd ref={c => this._nodes.set(10, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                                   index={10} nativeAdTemplate={NativeAdTemplate}
-                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
-                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                                   landingPageAdTemplate={LandingPageAdTemplate}/>
+                          index={10} nativeAdTemplate={NativeAdTemplate}
+                          nativeVideoAdTemplate={NativeVideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                          landingPageAdTemplate={LandingPageAdTemplate}
+                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
             </View>
         );
     }

@@ -36,6 +36,13 @@ export default class FlatListPage extends Component {
             });
     }
 
+    needsDisplayClickOutURL = (url) => {
+        console.log("needsDisplayClickOutURL App.js ", url);
+        this.props.navigation.navigate('ClickOutScreen', {
+            url: url,
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -55,11 +62,12 @@ export default class FlatListPage extends Component {
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
                                   <NativoAd ref={c => this._nodes.set(item.key, c)} {...this.props}
-                                                     sectionUrl={sampleSectionUrl} index={item.key}
-                                                     nativeAdTemplate={NativeAdTemplate}
-                                                     nativeVideoAdTemplate={NativeVideoAdTemplate}
-                                                     standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                                                     landingPageAdTemplate={LandingPageAdTemplate}/>
+                                            sectionUrl={sampleSectionUrl} index={item.key}
+                                            nativeAdTemplate={NativeAdTemplate}
+                                            nativeVideoAdTemplate={NativeVideoAdTemplate}
+                                            standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                            landingPageAdTemplate={LandingPageAdTemplate}
+                                            clickOutUrlCallback={this.needsDisplayClickOutURL}/>
                                   :
                                   <PublisherCard/>
                           }

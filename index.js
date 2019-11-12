@@ -12,6 +12,7 @@ import HomePage from "./screens/HomePage";
 import ScrollViewPage from "./screens/ScrollViewPage";
 import NativoLandingPage from "react-native-nativo-sdk-alpha.1/NativoLandingPage";
 import MOAPViewPage from "./screens/MOAPViewPage";
+import ClickOutViewPage from "./screens/ClickOutViewPage";
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
@@ -20,6 +21,7 @@ const MainNavigator = createStackNavigator({
     ScrollAdScreen: {screen: ScrollViewPage},
     NativoLandingScreen: {screen: NativoLandingPage},
     MOAPAdScreen: {screen: MOAPViewPage},
+    ClickOutScreen: {screen: ClickOutViewPage},
 });
 
 const AppNavigation = createAppContainer(MainNavigator);

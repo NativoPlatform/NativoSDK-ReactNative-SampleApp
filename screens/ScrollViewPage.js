@@ -35,6 +35,13 @@ export default class ScrollViewPage extends Component<Props> {
             });
     }
 
+    needsDisplayClickOutURL = (url) => {
+        console.log("needsDisplayClickOutURL App.js ", url);
+        this.props.navigation.navigate('ClickOutScreen', {
+            url: url,
+        })
+    }
+
     render() {
         return (
             <ScrollView contentContainerStyle={{flexGrow: 1, alignItems: 'center', justifyItems: 'center'}}
@@ -42,17 +49,19 @@ export default class ScrollViewPage extends Component<Props> {
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                                   index={100} nativeAdTemplate={NativeAdTemplate}
-                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
-                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                                   landingPageAdTemplate={LandingPageAdTemplate}/>
+                          index={100} nativeAdTemplate={NativeAdTemplate}
+                          nativeVideoAdTemplate={NativeVideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                          landingPageAdTemplate={LandingPageAdTemplate}
+                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                                   index={200} nativeAdTemplate={NativeAdTemplate}
-                                   nativeVideoAdTemplate={NativeVideoAdTemplate}
-                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                                   landingPageAdTemplate={LandingPageAdTemplate}/>
+                          index={200} nativeAdTemplate={NativeAdTemplate}
+                          nativeVideoAdTemplate={NativeVideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                          landingPageAdTemplate={LandingPageAdTemplate}
+                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
             </ScrollView>
         );
     }
