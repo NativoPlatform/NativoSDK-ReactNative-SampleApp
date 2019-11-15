@@ -21,7 +21,7 @@ const MainNavigator = createStackNavigator({
     ScrollAdScreen: {screen: ScrollViewPage},
     NativoLandingScreen: {screen: NativoLandingPage},
     MOAPAdScreen: {screen: MOAPViewPage},
-    ClickOutScreen: {screen: ClickOutViewPage},
+    ClickOutScreen: {screen: ClickOutViewPage}
 });
 
 const AppNavigation = createAppContainer(MainNavigator);

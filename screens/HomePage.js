@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, View} from 'react-native';
+import {NativeModules} from 'react-native';
 
 export default class HomePage extends Component<Props> {
+
+    constructor(props: P, context: any) {
+        super(props, context);
+        NativeModules.NativoRNSdk.registerTemplates();
+        NativeModules.NativoRNSdk.enableDebugLogs();
+        NativeModules.NativoRNSdk.enableTestAds("in_feed_video");
+    }
 
     static navigationOptions = {
         title: 'Home Page',

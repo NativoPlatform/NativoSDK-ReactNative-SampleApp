@@ -3,7 +3,7 @@ import {WebView} from "react-native-webview";
 import {View, Text, Image, StyleSheet} from "react-native";
 
 const LandingPageAdTemplate = (props) => {
-    let p = props.navigation.state.params
+    let p = props.navigation.state.params;
     let date = p.adDate;
     let adTitle = p.adTitle;
     let authorName = p.adAuthorName;

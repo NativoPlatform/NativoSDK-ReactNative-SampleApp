@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, ImageBackground, ProgressBarAndroid, StyleSheet, Text, View} from "react-native";
 import Video from "react-native-video";
+import NativoVideoControls from "react-native-nativo-sdk-alpha.1/view_components/NativoVideoControls";
 
 const NativeVideoAdTemplate = (props) => {
     return (
@@ -8,33 +9,7 @@ const NativeVideoAdTemplate = (props) => {
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
             <View style={styles.cardImage}>
                 <Video nativeID={'videoView'} useTextureView={true} style={styles.backgroundVideo}/>
-                <ImageBackground style={{
-                    flexDirection: 'column',
-                    width: '100%',
-                    height: '100%',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }} nativeID={'articleImage'}>
-                    <ImageBackground nativeID={'videoRestart'} style={{
-                        flex: 1,
-                        width: 40,
-                        height: '100%',
-                        alignSelf: 'center',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}>
-                        <ImageBackground nativeID={'videoPlay'} style={{width: '100%', height: '100%'}}>
-                            <ProgressBarAndroid style={{width: '100%', height: '100%'}}
-                                                nativeID={'videoProgress'}/>
-                        </ImageBackground>
-                    </ImageBackground>
-                    <ImageBackground
-                        style={{width: '90%', height: 10, bottom: 10, justifyContent: 'flex-end'}}>
-                        <Image nativeID={'videoMuteIndicator'}
-                               style={{width: 30, height: 30, alignSelf: 'flex-end'}}/>
-                    </ImageBackground>
-                </ImageBackground>
-
+                <NativoVideoControls/>
             </View>
             <View style={styles.textCenter}>
                 <Text nativeID={'articleDate'}

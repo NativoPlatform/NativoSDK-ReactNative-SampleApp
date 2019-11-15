@@ -27,12 +27,6 @@ public class MainActivity extends ReactActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         NativoSDK.getInstance().init(this);
-        NativoSDK.getInstance().registerNativeAd(new NativeAd());
-        NativoSDK.getInstance().registerVideoAd(new NativeVideoAd());
-        NativoSDK.getInstance().registerLandingPage(new NativeLandingPage());
-        NativoSDK.getInstance().registerStandardDisplayAd(new StandardDisplayAd());
-//        NativoSDK.getInstance().enableTestAdvertisements(NtvAdData.NtvAdType.STANDARD_DISPLAY);
-        NativoSDK.getInstance().enableDevLogs();
     }
 
 }
