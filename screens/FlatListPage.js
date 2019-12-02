@@ -41,7 +41,20 @@ export default class FlatListPage extends Component {
         this.props.navigation.navigate('ClickOutScreen', {
             url: url,
         })
-    }
+    };
+
+    displayLandingPage = (event) => {
+        console.log("displayLandingPage App.js ", event);
+        this.props.navigation.navigate('NativoLandingScreen', {
+            sectionUrl: event.sectionUrl,
+            adId: event.adId,
+            containerHash: event.containerHash,
+            adDescription: event.adDescription,
+            adTitle: event.adTitle,
+            adAuthorName: event.adAuthorName,
+            adDate: event.adDate,
+        })
+    };
 
     render() {
         return (
@@ -66,8 +79,8 @@ export default class FlatListPage extends Component {
                                             nativeAdTemplate={NativeAdTemplate}
                                             nativeVideoAdTemplate={NativeVideoAdTemplate}
                                             standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                                            landingPageAdTemplate={LandingPageAdTemplate}
-                                            clickOutUrlCallback={this.needsDisplayClickOutURL}/>
+                                            onNativeAdClick={this.displayLandingPage}
+                                            onDisplayAdClick={this.needsDisplayClickOutURL}/>
                                   :
                                   <PublisherCard/>
                           }

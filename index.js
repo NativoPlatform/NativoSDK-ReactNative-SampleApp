@@ -10,7 +10,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import FlatListPage from "./screens/FlatListPage";
 import HomePage from "./screens/HomePage";
 import ScrollViewPage from "./screens/ScrollViewPage";
-import NativoLandingPage from "react-native-nativo-sdk-alpha.1/NativoLandingPage";
+import LandingViewPage from "./screens/LandingViewPage";
 import MOAPViewPage from "./screens/MOAPViewPage";
 import ClickOutViewPage from "./screens/ClickOutViewPage";
 
@@ -19,7 +19,7 @@ const MainNavigator = createStackNavigator({
     StandAloneAdScreen: {screen: App},
     FlatListAdScreen: {screen: FlatListPage},
     ScrollAdScreen: {screen: ScrollViewPage},
-    NativoLandingScreen: {screen: NativoLandingPage},
+    NativoLandingScreen: {screen: LandingViewPage},
     MOAPAdScreen: {screen: MOAPViewPage},
     ClickOutScreen: {screen: ClickOutViewPage}
 });

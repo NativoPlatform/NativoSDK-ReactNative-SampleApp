@@ -4,7 +4,6 @@ import {StyleSheet, View} from 'react-native';
 import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
-import LandingPageAdTemplate from "./adTemplates/LandingPageAdTemplate";
 import PublisherCard from "./publisherTemplate/PublisherCard";
 import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd"
 
@@ -46,6 +45,19 @@ export class App extends Component<Props> {
         })
     }
 
+    displayLandingPage = (event) => {
+        console.log("displayLandingPage App.js ", event);
+        this.props.navigation.navigate('NativoLandingScreen', {
+            sectionUrl: event.sectionUrl,
+            adId: event.adId,
+            containerHash: event.containerHash,
+            adDescription: event.adDescription,
+            adTitle: event.adTitle,
+            adAuthorName: event.adAuthorName,
+            adDate: event.adDate,
+        })
+    };
+
     render() {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
@@ -54,8 +66,8 @@ export class App extends Component<Props> {
                           index={10} nativeAdTemplate={NativeAdTemplate}
                           nativeVideoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          landingPageAdTemplate={LandingPageAdTemplate}
-                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
+                          onNativeAdClick={this.displayLandingPage}
+                          onDisplayAdClick={this.needsDisplayClickOutURL}/>
             </View>
         );
     }

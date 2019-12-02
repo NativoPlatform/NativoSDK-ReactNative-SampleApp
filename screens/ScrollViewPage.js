@@ -40,7 +40,20 @@ export default class ScrollViewPage extends Component<Props> {
         this.props.navigation.navigate('ClickOutScreen', {
             url: url,
         })
-    }
+    };
+
+    displayLandingPage = (event) => {
+        console.log("displayLandingPage App.js ", event);
+        this.props.navigation.navigate('NativoLandingScreen', {
+            sectionUrl: event.sectionUrl,
+            adId: event.adId,
+            containerHash: event.containerHash,
+            adDescription: event.adDescription,
+            adTitle: event.adTitle,
+            adAuthorName: event.adAuthorName,
+            adDate: event.adDate,
+        })
+    };
 
     render() {
         return (
@@ -52,16 +65,16 @@ export default class ScrollViewPage extends Component<Props> {
                           index={100} nativeAdTemplate={NativeAdTemplate}
                           nativeVideoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          landingPageAdTemplate={LandingPageAdTemplate}
-                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
+                          onNativeAdClick={this.displayLandingPage}
+                          onDisplayAdClick={this.needsDisplayClickOutURL}/>
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
                           index={200} nativeAdTemplate={NativeAdTemplate}
                           nativeVideoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          landingPageAdTemplate={LandingPageAdTemplate}
-                          clickOutUrlCallback={this.needsDisplayClickOutURL}/>
+                          onNativeAdClick={this.displayLandingPage}
+                          onDisplayAdClick={this.needsDisplayClickOutURL}/>
             </ScrollView>
         );
     }
