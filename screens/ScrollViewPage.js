@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
-import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
-import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd";
+import { NativoSDK, NativoAd } from "react-native-nativo-ads";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/'
 export default class ScrollViewPage extends Component<Props> {
@@ -20,19 +19,13 @@ export default class ScrollViewPage extends Component<Props> {
     };
 
     componentDidMount(): void {
-        this.checkNodes();
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 100);
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 200);
     }
 
     componentDidUpdate() {
-        this.checkNodes();
-    }
-
-    checkNodes() {
-        Array.from(this._nodes.values())
-            .filter(node => node != null)
-            .forEach(node => {
-                node.prefetchAd();
-            });
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 100);
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 200);
     }
 
     needsDisplayClickOutURL = (url) => {
@@ -55,26 +48,44 @@ export default class ScrollViewPage extends Component<Props> {
         })
     };
 
+    removeNativoAd = (event) => {
+        console.log("Remove me: " + event.index + " "+ event.sectionUrl);
+        // let filteredData = this.state.data;
+        // filteredData.splice(event.index, 1);
+        // this.setState({ data : filteredData });
+    }
+
+    // ref={c => this._nodes.set(100, c)}
+    // ref={c => this._nodes.set(200, c)}
+
     render() {
         return (
             <ScrollView contentContainerStyle={{flexGrow: 1, alignItems: 'center', justifyItems: 'center'}}
                         nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAd ref={c => this._nodes.set(100, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                          index={100} nativeAdTemplate={NativeAdTemplate}
-                          nativeVideoAdTemplate={NativeVideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                <NativoAd {...this.props} 
+                          sectionUrl={sampleSectionUrl}
+                          index={100} 
+                          nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
+                          videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
+                          standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
                           onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.needsDisplayClickOutURL}/>
+                          onDisplayAdClick={this.needsDisplayClickOutURL}
+                          onNeedsRemoveAd={this.removeNativoAd} 
+                          style={ {'height' : 380, 'width': 400 } } />
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAd ref={c => this._nodes.set(200, c)} {...this.props} sectionUrl={sampleSectionUrl}
-                          index={200} nativeAdTemplate={NativeAdTemplate}
-                          nativeVideoAdTemplate={NativeVideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                <NativoAd {...this.props} 
+                          sectionUrl={sampleSectionUrl}
+                          index={200} 
+                          nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
+                          videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
+                          standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
                           onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.needsDisplayClickOutURL}/>
+                          onDisplayAdClick={this.needsDisplayClickOutURL}
+                          onNeedsRemoveAd={this.removeNativoAd} 
+                          style={ {'height' : 380, 'width': 400 } } />
             </ScrollView>
         );
     }
