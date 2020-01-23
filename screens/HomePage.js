@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
-import {Button, StyleSheet, View} from 'react-native';
-import {NativeModules} from 'react-native';
+import {Button, StyleSheet, View, NativeModules} from 'react-native';
+import { NativoSDK } from 'react-native-nativo-ads';
 
-export default class HomePage extends Component<Props> {
+console.log("NativoAds: " + JSON.stringify(Object.keys(NativoSDK)));
+NativoSDK.enableDevLogs();
 
-    constructor(props: P, context: any) {
+export default class HomePage extends Component {
+
+    constructor(props, context) {
         super(props, context);
-        NativeModules.NativoRNSdk.registerTemplates();
-        NativeModules.NativoRNSdk.enableDebugLogs();
-        NativeModules.NativoRNSdk.enableTestAds("in_feed_video");
+        //NativeModules.NativoRNSdk.registerTemplates();
+        NativoSDK.enableDevLogs();
+        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NO_FILL);
     }
 
     static navigationOptions = {

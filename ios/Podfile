@@ -1,3 +1,4 @@
+
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
@@ -27,9 +28,10 @@ target 'ReactSample' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-video', :path => '../node_modules/react-native-video'
 
-  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+  #pod 'NativoSDK', :path => "../NativoSDK-Pod/"
+  pod 'NativoSDK', :path => "./NativoSDK-iOS/"
 
   target 'ReactSampleTests' do
     inherit! :search_paths
@@ -37,14 +39,4 @@ target 'ReactSample' do
   end
 
   use_native_modules!
-end
-
-target 'ReactSample-tvOS' do
-  # Pods for ReactSample-tvOS
-
-  target 'ReactSample-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

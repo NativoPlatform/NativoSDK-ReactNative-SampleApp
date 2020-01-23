@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
-import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import LandingPageAdTemplate from "../adTemplates/LandingPageAdTemplate";
-import NativoAd from "react-native-nativo-sdk-alpha.1/NativoAd";
+import { NativoSDK, NativoAd } from "react-native-nativo-ads";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/';
 
@@ -13,7 +12,19 @@ export default class FlatListPage extends Component {
 
     constructor(props) {
         super(props);
-        this._nodes = new Map();
+        let data = [
+            {key: 1},
+            {key: 2},
+            {key: 3},
+            {key: 4},
+            {key: 5},
+            {key: 6},
+            {key: 7},
+            {key: 8},
+            {key: 9},
+            {key: 10},
+        ];
+        this.state = { data : data };
     }
 
     static navigationOptions = {
@@ -21,66 +32,50 @@ export default class FlatListPage extends Component {
     };
 
     componentDidMount() {
-        this.checkNodes();
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        this.checkNodes();
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
+        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
     }
 
-    checkNodes() {
-        Array.from(this._nodes.values())
-            .filter(node => node != null)
-            .forEach(node => {
-                node.prefetchAd();
-            });
-    }
-
-    needsDisplayClickOutURL = (url) => {
-        console.log("needsDisplayClickOutURL App.js ", url);
+    needsDisplayClickOutURL = (event) => {
+        console.log("needsDisplayClickOutURL ", event.url);
         this.props.navigation.navigate('ClickOutScreen', {
-            url: url,
-        })
+            url: event.url,
+        });
     };
 
     displayLandingPage = (event) => {
-        console.log("displayLandingPage App.js ", event);
-        this.props.navigation.navigate('NativoLandingScreen', {
-            sectionUrl: event.sectionUrl,
-            adId: event.adId,
-            containerHash: event.containerHash,
-            adDescription: event.adDescription,
-            adTitle: event.adTitle,
-            adAuthorName: event.adAuthorName,
-            adDate: event.adDate,
-        })
+        console.log("displayLandingPage ", event);
+        this.props.navigation.navigate('NativoLandingScreen', event);
     };
+
+    removeNativoAd = (event) => {
+        console.log("Remove me: " + event.index + " "+ event.sectionUrl);
+        let filteredData = this.state.data;
+        filteredData.splice(event.index-1, 1);
+        this.setState({ data : filteredData });
+    }
 
     render() {
         return (
             <View style={styles.container}>
                 <FlatList nativeID={'publisherNativoAdContainer'}
-                          data={[
-                              {key: 1},
-                              {key: 2},
-                              {key: 3},
-                              {key: 4},
-                              {key: 5},
-                              {key: 6},
-                              {key: 7},
-                              {key: 8},
-                              {key: 9},
-                              {key: 10},
-                          ]}
+                          data={this.state.data}
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
-                                  <NativoAd ref={c => this._nodes.set(item.key, c)} {...this.props}
-                                            sectionUrl={sampleSectionUrl} index={item.key}
-                                            nativeAdTemplate={NativeAdTemplate}
-                                            nativeVideoAdTemplate={NativeVideoAdTemplate}
-                                            standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                  <NativoAd {...this.props}
+                                            sectionUrl={sampleSectionUrl} 
+                                            index={item.key}
+                                            nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
+                                            videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
+                                            standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
                                             onNativeAdClick={this.displayLandingPage}
-                                            onDisplayAdClick={this.needsDisplayClickOutURL}/>
+                                            onDisplayAdClick={this.needsDisplayClickOutURL}
+                                            onNeedsRemoveAd={this.removeNativoAd} />
                                   :
                                   <PublisherCard/>
                           }

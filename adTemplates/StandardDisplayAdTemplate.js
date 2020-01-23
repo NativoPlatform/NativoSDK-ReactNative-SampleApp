@@ -1,19 +1,11 @@
 import React, {useEffect} from 'react';
 import {DeviceEventEmitter, StyleSheet, Text, View} from "react-native";
-import {WebView} from "react-native-webview";
 
 const StandardDisplayAdTemplate = (props) => {
-    useEffect(
-        () => {
-            setCallbacks()
-        },
-        [],
-    )
     return (
         <View nativeID={'nativoSDAdView'} style={styles.nativeCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
-            <WebView nativeID={'nativoAdWebView'} scalesPageToFit={false} scrollEnabled={false}
-                     style={{width: 300, height: 250, alignSelf: 'center'}}/>
+            <NativoWebContent style={{width: props.displayWidth, height: props.displayHeight, alignSelf: 'center', alignContent: 'center'}} />
         </View>
     );
 }
