@@ -19,11 +19,11 @@ export class App extends Component<Props> {
     }
 
     componentDidMount(): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
+
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
+        
     }
 
     static navigationOptions = {

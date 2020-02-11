@@ -6,7 +6,7 @@ import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import { NativoSDK, NativoAd } from "react-native-nativo-ads";
 
-let sampleSectionUrl = 'http://www.nativo.net/test/';
+let sampleSectionUrl = 'pub.com';
 
 export default class FlatListPage extends Component {
 
@@ -32,13 +32,11 @@ export default class FlatListPage extends Component {
     };
 
     componentDidMount() {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
+
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
+
     }
 
     needsDisplayClickOutURL = (event) => {
@@ -68,14 +66,14 @@ export default class FlatListPage extends Component {
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
                                   <NativoAd {...this.props}
-                                            sectionUrl={sampleSectionUrl} 
-                                            index={item.key}
-                                            nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                                            videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                                            standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
-                                            onNativeAdClick={this.displayLandingPage}
-                                            onDisplayAdClick={this.needsDisplayClickOutURL}
-                                            onNeedsRemoveAd={this.removeNativoAd} />
+                                    sectionUrl={sampleSectionUrl} 
+                                    index={item.key}
+                                    nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
+                                    videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
+                                    standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                                    onNativeAdClick={this.displayLandingPage}
+                                    onDisplayAdClick={this.needsDisplayClickOutURL}
+                                    onNeedsRemoveAd={this.removeNativoAd} />
                                   :
                                   <PublisherCard/>
                           }
