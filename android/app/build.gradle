@@ -196,7 +196,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation(group: 'net.nativo.sdk', name: 'nativo-sdk', version: '5.0.3-SNAPSHOT', ext: 'aar', changing: true) {
+    implementation(group: 'net.nativo.sdk', name: 'nativo-sdk', version: '5.1.0-SNAPSHOT', ext: 'aar', changing: true) {
         transitive = true
     }
 //    compile  project(':react-native-nativo-sdk-aplha.1')

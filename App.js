@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
-import VideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
+import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
 import PublisherCard from "./publisherTemplate/PublisherCard";
 import { NativoSDK, NativoAd } from "react-native-nativo-ads"
@@ -19,11 +19,11 @@ export class App extends Component<Props> {
     }
 
     componentDidMount(): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
+        // NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
+        // NativoSDK.prefetchAdForSection(sampleSectionUrl, 10);
     }
 
     static navigationOptions = {
@@ -42,11 +42,13 @@ export class App extends Component<Props> {
         this.props.navigation.navigate('NativoLandingScreen', {
             sectionUrl: event.sectionUrl,
             adId: event.adId,
+            index: event.adId,
             containerHash: event.containerHash,
             adDescription: event.adDescription,
-            adTitle: event.adTitle,
-            adAuthorName: event.adAuthorName,
+            title: event.adTitle,
+            authorName: event.adAuthorName,
             adDate: event.adDate,
+            authorImgUrl: event.adAuthorUrl
         })
     };
 
@@ -58,14 +60,15 @@ export class App extends Component<Props> {
     }
 
     render() {
+        const asd = NativeAdTemplate;
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <NativoAd sectionUrl={sampleSectionUrl}
-                          index={10} 
-                          nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                          videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                          standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                          index={10}
+                          nativeAdTemplate={asd }
+                          videoAdTemplate={NativeVideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate }
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onNeedsRemoveAd={this.removeNativoAd} />
