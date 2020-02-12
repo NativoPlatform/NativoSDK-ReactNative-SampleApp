@@ -11,9 +11,9 @@
         "react": "16.8.6",
         "react-native": "0.60.5",
         "react-native-gesture-handler": "1.4.1",
-        "react-native-nativo-ads": "file:../NativoSDK-ReactNative/",
+        "react-native-nativo-ads": "^1.0.0-SNAPSHOT.ANDROID.7",
         "react-native-video": "5.0.2",
-        "react-native-webview": "7.4.3",
+        "react-native-webview": "^8.0.6",
         "react-navigation": "4.0.10",
         "react-navigation-stack": "1.10.3"
     },

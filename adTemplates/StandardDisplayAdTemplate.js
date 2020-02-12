@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import {DeviceEventEmitter, StyleSheet, Text, View} from "react-native";
+import {NativoWebContent} from "react-native-nativo-ads";
 
 const StandardDisplayAdTemplate = (props) => {
     return (
         <View nativeID={'nativoSDAdView'} style={styles.nativeCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
-            <NativoWebContent style={{width: props.displayWidth, height: props.displayHeight, alignSelf: 'center', alignContent: 'center'}} />
+            <NativoWebContent {...props} style={{width: props.displayWidth, height: props.displayHeight, alignSelf: 'center', alignContent: 'center'}} />
         </View>
     );
 }
@@ -34,4 +35,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default StandardDisplayAdTemplate
+export default StandardDisplayAdTemplate;

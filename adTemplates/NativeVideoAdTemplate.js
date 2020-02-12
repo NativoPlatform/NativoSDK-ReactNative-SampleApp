@@ -1,14 +1,14 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from "react-native";
 import Video from "react-native-video";
-import NativoVideoControls from "react-native-nativo-ads/view_components/NativoVideoControls";
+import {NativoVideo} from "react-native-nativo-ads";
 
 const NativeVideoAdTemplate = (props) => {
     return (
         <View nativeID={'nativoVideoAdView'} style={styles.videoCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
             <View style={styles.cardImage}>
-                <Video nativeID={'videoView'} useTextureView={true} style={styles.backgroundVideo} />
+                <NativoVideo/>
             </View>
             <View style={styles.textCenter}>
                 <Text nativeID={'articleDate'}

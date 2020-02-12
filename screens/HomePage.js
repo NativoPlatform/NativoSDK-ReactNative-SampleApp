@@ -3,15 +3,14 @@ import {Button, StyleSheet, View, NativeModules} from 'react-native';
 import { NativoSDK } from 'react-native-nativo-ads';
 
 console.log("NativoAds: " + JSON.stringify(Object.keys(NativoSDK)));
-NativoSDK.enableDevLogs();
 
 export default class HomePage extends Component {
 
     constructor(props, context) {
         super(props, context);
-        //NativeModules.NativoRNSdk.registerTemplates();
-        NativoSDK.enableDevLogs();
-        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NO_FILL);
+        NativoSDK.enableDebugLogs();
+        console.log(NativoSDK.AdTypes.NATIVE);
+        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
     }
 
     static navigationOptions = {
