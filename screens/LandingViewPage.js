@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, Image, ScrollView} from "react-native";
-import { NativoWebContent } from "react-native-nativo-ads";
+import {NativoWebContent} from "react-native-nativo-ads";
 
 export default class LandingViewPage extends Component<Props> {
 
     constructor(props: P, context: any) {
         super(props, context);
-        this.state = {  
-            webStyle: {
-                height: 800
-            }     
+        this.state = {
+            height:700
         };
     }
 
@@ -24,42 +22,34 @@ export default class LandingViewPage extends Component<Props> {
         const containerHash = navigation.getParam('containerHash');
         const title = navigation.getParam('title');
         const authorImgUrl = navigation.getParam('authorImgUrl');
+        console.log("image url " + authorImgUrl);
         const authorName = navigation.getParam('authorName');
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.title}>{title}</Text>
                 <View style={styles.authorView}>
-                    <Image source={{ uri: authorImgUrl }} style={styles.authorImage} />
+                    <Image source={{ uri: authorImgUrl }} style={styles.authorImage} resizeMode="contain"/>
                     <Text style={styles.authorName}>By {authorName}</Text>
                 </View>
-                <NativoWebContent 
-                    style={this.state.webStyle} 
-                    index={index} 
-                    sectionUrl={sectionUrl} 
-                    containerHash={containerHash} 
+                <NativoWebContent
+                    style={{height:this.state.height}}
+                    index={index}
+                    sectionUrl={sectionUrl}
+                    containerHash={containerHash}
                     onClickExternalLink={(event)=> {
                         navigation.navigate("ClickoutPage", { url: event.url });
-                    }} 
-                    onFinishLoading={(event)=>{ 
+                    }}
+                    onFinishLoading={(event)=>{
                         if (event.error) {
                             console.log("There was an error: " + JSON.stringify(event.error));
                         } else {
-                            this.setState({ webStyle: { height: event.contentHeight } });
+                            this.setState({height: event.contentHeight});
                         }
-                    }} />  
+                    }} />
             </ScrollView>
         );
     }
 }
-
-/* 
-    <NativoLandingPage
-        adId={adId}
-        containerHash={containerHash}
-        url={url}
-        landingPageAdTemplate={LandingPageAdTemplate}
-        {...this.props}/>
-*/
 
 const styles = StyleSheet.create({
     container: {

@@ -8,7 +8,8 @@ export default class HomePage extends Component {
 
     constructor(props, context) {
         super(props, context);
-        NativoSDK.enableDebugLogs();
+<<<<<<< HEAD
+        NativoSDK.enableDevLogs();
         NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
         NativoSDK.prefetchAdForSection("pub.com", (error, adDidGetFill, section) => {
             if (adDidGetFill) {
@@ -23,7 +24,12 @@ export default class HomePage extends Component {
             } else {
                 console.log("No fill");
             }
-       });
+        });
+=======
+        NativoSDK.enableDebugLogs();
+        console.log(NativoSDK.AdTypes.NATIVE);
+        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
+>>>>>>> reconcileAndroid
     }
 
     static navigationOptions = {

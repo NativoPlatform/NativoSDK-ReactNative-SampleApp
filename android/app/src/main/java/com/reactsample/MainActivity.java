@@ -4,12 +4,7 @@ import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 
-import net.nativo.reactsdk.NativeAd;
-import net.nativo.reactsdk.NativeLandingPage;
-import net.nativo.reactsdk.NativeVideoAd;
-import net.nativo.reactsdk.StandardDisplayAd;
 import net.nativo.sdk.NativoSDK;
-import net.nativo.sdk.ntvcore.NtvAdData;
 
 public class MainActivity extends ReactActivity {
 
