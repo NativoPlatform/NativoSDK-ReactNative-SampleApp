@@ -65,25 +65,25 @@ export default class ScrollViewPage extends Component<Props> {
                 <NativoAd {...this.props} 
                           sectionUrl={sampleSectionUrl}
                           index={100} 
-                          nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                          videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                          standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                          nativeAdTemplate={NativeAdTemplate}
+                          videoAdTemplate={VideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onNeedsRemoveAd={this.removeNativoAd} 
-                          style={ {'height' : 380, 'width': 400 } } />
+                          style={ styles.card } />
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd {...this.props} 
                           sectionUrl={sampleSectionUrl}
                           index={200} 
-                          nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                          videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                          standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                          nativeAdTemplate={NativeAdTemplate}
+                          videoAdTemplate={VideoAdTemplate}
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onNeedsRemoveAd={this.removeNativoAd} 
-                          style={ {'height' : 380, 'width': 400 } } />
+                          style={ styles.card } />
             </ScrollView>
         );
     }
@@ -93,5 +93,12 @@ export default class ScrollViewPage extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    card: {
+        width: 400,
+        height: 300,
+        padding: 10,
+        margin: 10,
+        elevation: 1
     }
 });

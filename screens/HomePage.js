@@ -8,7 +8,7 @@ export default class HomePage extends Component {
 
     constructor(props, context) {
         super(props, context);
-        NativoSDK.enableDebugLogs();
+        NativoSDK.enableDevLogs();
         NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
         NativoSDK.prefetchAdForSection("pub.com", (error, adDidGetFill, section) => {
             if (adDidGetFill) {

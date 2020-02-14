@@ -41,8 +41,7 @@ export class App extends Component<Props> {
         console.log("displayLandingPage App.js ", event);
         this.props.navigation.navigate('NativoLandingScreen', {
             sectionUrl: event.sectionUrl,
-            adId: event.adId,
-            index: event.adId,
+            index: event.index,
             containerHash: event.containerHash,
             adDescription: event.adDescription,
             title: event.adTitle,
@@ -63,11 +62,12 @@ export class App extends Component<Props> {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
-                <NativoAd sectionUrl={sampleSectionUrl}
+                <NativoAd style={ styles.card }
+                          sectionUrl={sampleSectionUrl}
                           index={10}
-                          nativeAdTemplate={ NativeAdTemplate }
+                          nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate }
+                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onNeedsRemoveAd={this.removeNativoAd} />
@@ -79,6 +79,13 @@ export class App extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    card: {
+        width: 400,
+        height: 300,
+        padding: 10,
+        margin: 10,
+        elevation: 1
     }
 });
 

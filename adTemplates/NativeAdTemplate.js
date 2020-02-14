@@ -4,7 +4,7 @@ import {Image, StyleSheet, Text, View} from "react-native";
 const NativeAdTemplate = (props) => {
     return (
         <View nativeID={'nativoAdView'} style={styles.nativeCard}>
-            <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
+            <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Hi</Text>
             <Image style={styles.cardImage}
                    nativeID={'articleImage'}/>
             <View>
@@ -29,8 +29,6 @@ const styles = StyleSheet.create({
     nativeCard: {
         borderWidth: 2,
         borderColor: '#23c9f5',
-        width: 400,
-        height: 380,
         padding: 10,
         marginBottom: 10,
         elevation: 1

@@ -68,9 +68,9 @@ export default class FlatListPage extends Component {
                                   <NativoAd {...this.props}
                                     sectionUrl={sampleSectionUrl} 
                                     index={item.key}
-                                    nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                                    videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                                    standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                                    nativeAdTemplate={NativeAdTemplate}
+                                    videoAdTemplate={VideoAdTemplate}
+                                    standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                     onNativeAdClick={this.displayLandingPage}
                                     onDisplayAdClick={this.needsDisplayClickOutURL}
                                     onNeedsRemoveAd={this.removeNativoAd} />
