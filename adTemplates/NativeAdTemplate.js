@@ -4,7 +4,7 @@ import {Image, StyleSheet, Text, View} from "react-native";
 const NativeAdTemplate = (props) => {
     return (
         <View nativeID={'nativoAdView'} style={styles.nativeCard}>
-            <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Hi</Text>
+            <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
             <Image style={styles.cardImage}
                    nativeID={'articleImage'}/>
             <View>
