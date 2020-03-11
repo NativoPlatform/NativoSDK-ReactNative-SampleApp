@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
-import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import { NativoSDK, NativoAd } from "react-native-nativo-ads";
+import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 
 let sampleSectionUrl = 'http://www.nativo.net/test/';
-
 export default class FlatListPage extends Component {
 
     constructor(props) {
@@ -70,9 +69,9 @@ export default class FlatListPage extends Component {
                                   <NativoAd {...this.props}
                                             sectionUrl={sampleSectionUrl} 
                                             index={item.key}
-                                            nativeAdTemplate={{"NativeTemplate" : NativeAdTemplate }}
-                                            videoAdTemplate={{"VideoTemplate" : VideoAdTemplate }}
-                                            standardDisplayAdTemplate={{"StdTemplate" : StandardDisplayAdTemplate }}
+                                            nativeAdTemplate={NativeAdTemplate}
+                                            videoAdTemplate={NativeVideoAdTemplate}
+                                            standardDisplayAdTemplate={StandardDisplayAdTemplate }
                                             onNativeAdClick={this.displayLandingPage}
                                             onDisplayAdClick={this.needsDisplayClickOutURL}
                                             onNeedsRemoveAd={this.removeNativoAd} />

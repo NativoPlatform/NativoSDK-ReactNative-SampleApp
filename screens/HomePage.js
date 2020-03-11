@@ -9,8 +9,15 @@ export default class HomePage extends Component {
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDebugLogs();
-        console.log(NativoSDK.AdTypes.NATIVE);
-        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
+        // console.log(NativoSDK.AdTypes.NATIVE);
+        // NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
+        NativoSDK.prefetchAdForSection("pubasdas.com", (error, adDidGetFill, section) => {
+            if (adDidGetFill) {
+                console.log("Got an ad: "+section);
+            } else {
+                console.log("No fill");
+            }
+        });
     }
 
     static navigationOptions = {
