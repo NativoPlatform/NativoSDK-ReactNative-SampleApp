@@ -57,7 +57,7 @@ PODS:
     - React-cxxreact (= 0.60.5)
     - React-jsi (= 0.60.5)
   - React-jsinspector (0.60.5)
-  - react-native-nativo-ads (1.0.3-SNAPSHOT.33):
+  - react-native-nativo-ads (0.1.1):
     - NativoSDK
     - React
   - react-native-video (5.0.2):
@@ -65,7 +65,7 @@ PODS:
     - react-native-video/Video (= 5.0.2)
   - react-native-video/Video (5.0.2):
     - React
-  - react-native-webview (7.4.3):
+  - react-native-webview (8.1.1):
     - React
   - React-RCTActionSheet (0.60.5):
     - React-Core (= 0.60.5)
@@ -91,6 +91,8 @@ PODS:
   - React-RCTWebSocket (0.60.5):
     - React-Core (= 0.60.5)
   - RNGestureHandler (1.4.1):
+    - React
+  - RNScreens (2.3.0):
     - React
   - yoga (0.60.5.React)
 
@@ -120,6 +122,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNScreens (from `../node_modules/react-native-screens`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -177,6 +180,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -193,9 +198,9 @@ SPEC CHECKSUMS:
   React-jsi: 4d8c9efb6312a9725b18d6fc818ffc103f60fec2
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
-  react-native-nativo-ads: 482e4e7bc3e6a0860fa75820bc445c9e879752d8
-  react-native-video: d01ed7ff1e38fa7dcc6c15c94cf505e661b7bfd0
-  react-native-webview: 82d6456dfae1b3ef70c3939135536342afc96373
+  react-native-nativo-ads: 44307fadd7e487b3c26251145e7a7a370641d427
+  react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
+  react-native-webview: 0a9570f62a91d7f991bf4cebff64bb97ef9bf682
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24
@@ -207,8 +212,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
+  RNScreens: 03bf608b92ac0acf323f47d8f5b63a8f829340c8
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: cac145272e9d1add5270c03dacf629d226c83894
+PODFILE CHECKSUM: 1df99ea3997731d990e2a8de391f0d809e4631c6
 
 COCOAPODS: 1.8.4
