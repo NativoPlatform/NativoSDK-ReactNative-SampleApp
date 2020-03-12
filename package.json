@@ -11,7 +11,7 @@
         "react": "16.8.6",
         "react-native": "0.60.5",
         "react-native-gesture-handler": "1.4.1",
-        "react-native-nativo-ads": "^1.0.0-SNAPSHOT.ANDROID.10",
+        "react-native-nativo-ads": "^1.0.0-SNAPSHOT.ANDROID.11",
         "react-native-video": "5.0.2",
         "react-native-webview": "^8.0.6",
         "react-navigation": "4.0.10",

@@ -31,13 +31,9 @@ export default class FlatListPage extends Component {
     };
 
     componentDidMount() {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 1);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 5);
     }
 
     needsDisplayClickOutURL = (event) => {

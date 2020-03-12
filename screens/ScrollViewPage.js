@@ -19,13 +19,9 @@ export default class ScrollViewPage extends Component<Props> {
     };
 
     componentDidMount(): void {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 100);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 200);
     }
 
     componentDidUpdate() {
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 100);
-        NativoSDK.prefetchAdForSection(sampleSectionUrl, 200);
     }
 
     needsDisplayClickOutURL = (url) => {

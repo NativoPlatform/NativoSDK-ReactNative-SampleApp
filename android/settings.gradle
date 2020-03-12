@@ -1,9 +1,9 @@
 rootProject.name = 'ReactSample'
+include ':react-native-nativo-ads'
+project(':react-native-nativo-ads').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-nativo-ads/android')
 include ':react-native-webview'
 project(':react-native-webview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webview/android')
 include ':react-native-video'
 project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android-exoplayer')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
-//include ':react-native-nativo-sdk-aplha.1'
-//project(':react-native-nativo-sdk-aplha.1').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-nativo-sdk-aplha.1/android')
