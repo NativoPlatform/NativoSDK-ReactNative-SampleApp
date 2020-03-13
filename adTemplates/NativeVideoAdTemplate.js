@@ -7,9 +7,7 @@ const NativeVideoAdTemplate = (props) => {
     return (
         <View nativeID={'nativoVideoAdView'} style={styles.videoCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
-            <View style={styles.cardImage}>
-                <NativoVideo/>
-            </View>
+            <NativoVideo style={styles.video} />
             <View style={styles.textCenter}>
                 <Text nativeID={'articleDate'}
                       style={{textAlign: 'right', height: 30}}>{props.adDate}</Text>
@@ -42,7 +40,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         elevation: 1
     },
-    cardImage: {
+    video: {
         height: 200,
     },
     textCenter: {

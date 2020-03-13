@@ -1,5 +1,5 @@
 {
-    "name": "ReactSample",
+    "name": "nativo-react-sample",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -11,9 +11,10 @@
         "react": "16.8.6",
         "react-native": "0.60.5",
         "react-native-gesture-handler": "1.4.1",
-        "react-native-nativo-ads": "^1.0.0-SNAPSHOT.ANDROID.11",
+        "react-native-nativo-ads": "^0.1.2",
+        "react-native-screens": "^2.3.0",
         "react-native-video": "5.0.2",
-        "react-native-webview": "^8.0.6",
+        "react-native-webview": "^8.1.2",
         "react-navigation": "4.0.10",
         "react-navigation-stack": "1.10.3"
     },

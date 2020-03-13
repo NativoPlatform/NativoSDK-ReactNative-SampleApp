@@ -29,8 +29,6 @@ const styles = StyleSheet.create({
     nativeCard: {
         borderWidth: 2,
         borderColor: '#23c9f5',
-        width: 400,
-        height: 380,
         padding: 10,
         marginBottom: 10,
         elevation: 1

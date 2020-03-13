@@ -6,7 +6,8 @@ import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate"
 import { NativoSDK, NativoAd } from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 
-let sampleSectionUrl = 'http://www.nativo.net/test/';
+let sampleSectionUrl = 'pub.com';
+
 export default class FlatListPage extends Component {
 
     constructor(props) {
