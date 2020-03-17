@@ -5,6 +5,7 @@ import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import {NativoAd} from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import * as constant from "./../util/AppConstants"
 
 export default class FlatListPage extends Component {
 
@@ -62,7 +63,7 @@ export default class FlatListPage extends Component {
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
                                   <NativoAd {...this.props}
-                                            sectionUrl={sampleSectionUrl}
+                                            sectionUrl={constant.sampleSectionUrl}
                                             index={item.key}
                                             nativeAdTemplate={NativeAdTemplate}
                                             videoAdTemplate={NativeVideoAdTemplate}

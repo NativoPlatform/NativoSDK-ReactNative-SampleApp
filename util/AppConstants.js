@@ -1,1 +1,1 @@
-let sampleSectionUrl = 'http://www.nativo.net/test';
+export const sampleSectionUrl = 'http://www.nativo.net/test';

@@ -5,6 +5,7 @@ import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import {NativoAd} from "react-native-nativo-ads";
+import * as constant from "./../util/AppConstants"
 
 export default class ScrollViewPage extends Component<Props> {
 
@@ -60,7 +61,7 @@ export default class ScrollViewPage extends Component<Props> {
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd {...this.props}
-                          sectionUrl={sampleSectionUrl}
+                          sectionUrl={constant.sampleSectionUrl}
                           index={100}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={VideoAdTemplate}
@@ -72,7 +73,7 @@ export default class ScrollViewPage extends Component<Props> {
                 <PublisherCard/>
                 <PublisherCard/>
                 <NativoAd {...this.props}
-                          sectionUrl={sampleSectionUrl}
+                          sectionUrl={constant.sampleSectionUrl}
                           index={200}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={VideoAdTemplate}

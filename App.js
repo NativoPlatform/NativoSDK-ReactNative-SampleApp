@@ -6,6 +6,7 @@ import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
 import PublisherCard from "./publisherTemplate/PublisherCard";
 import {NativoAd} from "react-native-nativo-ads"
+import * as constant from "./util/AppConstants"
 
 type Props = {};
 
@@ -61,7 +62,7 @@ export class App extends Component<Props> {
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <NativoAd style={styles.card}
-                          sectionUrl={sampleSectionUrl}
+                          sectionUrl={constant.sampleSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
