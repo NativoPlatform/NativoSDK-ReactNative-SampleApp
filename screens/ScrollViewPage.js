@@ -4,9 +4,9 @@ import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import { NativoSDK, NativoAd } from "react-native-nativo-ads";
+import {NativoAd} from "react-native-nativo-ads";
+import * as constant from "./../util/AppConstants"
 
-let sampleSectionUrl = 'http://www.nativo.net/test/'
 export default class ScrollViewPage extends Component<Props> {
 
     constructor(props: P, context: any) {
@@ -45,7 +45,7 @@ export default class ScrollViewPage extends Component<Props> {
     };
 
     removeNativoAd = (event) => {
-        console.log("Remove me: " + event.index + " "+ event.sectionUrl);
+        console.log("Remove me: " + event.index + " " + event.sectionUrl);
         // let filteredData = this.state.data;
         // filteredData.splice(event.index, 1);
         // this.setState({ data : filteredData });
@@ -60,28 +60,28 @@ export default class ScrollViewPage extends Component<Props> {
                         nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAd {...this.props} 
-                          sectionUrl={sampleSectionUrl}
-                          index={100} 
+                <NativoAd {...this.props}
+                          sectionUrl={constant.sampleSectionUrl}
+                          index={100}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={VideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd} 
-                          style={ styles.card } />
+                          onNeedsRemoveAd={this.removeNativoAd}
+                          style={styles.card}/>
                 <PublisherCard/>
                 <PublisherCard/>
-                <NativoAd {...this.props} 
-                          sectionUrl={sampleSectionUrl}
-                          index={200} 
+                <NativoAd {...this.props}
+                          sectionUrl={constant.sampleSectionUrl}
+                          index={200}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={VideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd} 
-                          style={ styles.card } />
+                          onNeedsRemoveAd={this.removeNativoAd}
+                          style={styles.card}/>
             </ScrollView>
         );
     }

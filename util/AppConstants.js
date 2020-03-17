@@ -1,0 +1,1 @@
+export const sampleSectionUrl = 'http://www.nativo.net/test';

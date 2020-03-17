@@ -5,9 +5,8 @@ import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
 import PublisherCard from "./publisherTemplate/PublisherCard";
-import { NativoSDK, NativoAd } from "react-native-nativo-ads"
-
-var sampleSectionUrl = 'http://www.nativo.net/test/';
+import {NativoAd} from "react-native-nativo-ads"
+import * as constant from "./util/AppConstants"
 
 type Props = {};
 
@@ -23,7 +22,7 @@ export class App extends Component<Props> {
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        
+
     }
 
     static navigationOptions = {
@@ -52,7 +51,7 @@ export class App extends Component<Props> {
     };
 
     removeNativoAd = (event) => {
-        console.log("Remove me: " + event.index + " "+ event.sectionUrl);
+        console.log("Remove me: " + event.index + " " + event.sectionUrl);
         // let filteredData = this.state.data;
         // filteredData.splice(event.index, 1);
         // this.setState({ data : filteredData });
@@ -62,15 +61,15 @@ export class App extends Component<Props> {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
-                <NativoAd style={ styles.card }
-                          sectionUrl={sampleSectionUrl}
+                <NativoAd style={styles.card}
+                          sectionUrl={constant.sampleSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd} />
+                          onNeedsRemoveAd={this.removeNativoAd}/>
             </View>
         );
     }
