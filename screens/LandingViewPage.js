@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text, Image, ScrollView} from "react-native";
 import {NativoWebContent} from "react-native-nativo-ads";
 
-export default class LandingViewPage extends Component<Props> {
+export default class LandingViewPage extends Component {
 
-    constructor(props: P, context: any) {
+    constructor(props, context) {
         super(props, context);
         this.state = {
             height:700

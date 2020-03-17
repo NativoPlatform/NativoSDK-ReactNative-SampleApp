@@ -33,7 +33,7 @@ export default class FlatListPage extends Component {
     componentDidMount() {
     }
 
-    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
+    componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
     needsDisplayClickOutURL = (event) => {

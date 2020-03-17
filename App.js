@@ -8,21 +8,18 @@ import PublisherCard from "./publisherTemplate/PublisherCard";
 import {NativoAd} from "react-native-nativo-ads"
 import * as constant from "./util/AppConstants"
 
-type Props = {};
 
-export class App extends Component<Props> {
+export class App extends Component {
 
     constructor(props) {
         super(props);
         this._nodes = new Map();
     }
 
-    componentDidMount(): void {
-
+    componentDidMount() {
     }
 
-    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-
+    componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
     static navigationOptions = {
@@ -52,9 +49,6 @@ export class App extends Component<Props> {
 
     removeNativoAd = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
-        // let filteredData = this.state.data;
-        // filteredData.splice(event.index, 1);
-        // this.setState({ data : filteredData });
     }
 
     render() {

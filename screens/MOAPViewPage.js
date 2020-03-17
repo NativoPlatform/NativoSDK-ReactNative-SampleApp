@@ -6,7 +6,7 @@ import { NativoSDK } from 'react-native-nativo-ads';
 let MOAP_SECTION_URL = "http://www.nativo.net/sdk/pubops/moap";
 let PUBLISHER_URL = "https://s3-us-west-2.amazonaws.com/test-site.ntv.io/sdk/webview_moap.html";
 
-export default class MOAPViewPage extends Component<Props> {
+export default class MOAPViewPage extends Component {
 
     static navigationOptions = {
         title: 'MOAP Page',
