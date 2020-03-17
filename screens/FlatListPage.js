@@ -3,10 +3,8 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import { NativoSDK, NativoAd } from "react-native-nativo-ads";
+import {NativoAd} from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
-
-let sampleSectionUrl = 'pub.com';
 
 export default class FlatListPage extends Component {
 
@@ -24,7 +22,7 @@ export default class FlatListPage extends Component {
             {key: 9},
             {key: 10},
         ];
-        this.state = { data : data };
+        this.state = {data: data};
     }
 
     static navigationOptions = {
@@ -50,10 +48,10 @@ export default class FlatListPage extends Component {
     };
 
     removeNativoAd = (event) => {
-        console.log("Remove me: " + event.index + " "+ event.sectionUrl);
+        console.log("Remove me: " + event.index + " " + event.sectionUrl);
         let filteredData = this.state.data;
-        filteredData.splice(event.index-1, 1);
-        this.setState({ data : filteredData });
+        filteredData.splice(event.index - 1, 1);
+        this.setState({data: filteredData});
     }
 
     render() {
@@ -64,14 +62,14 @@ export default class FlatListPage extends Component {
                           renderItem={({item}) =>
                               (item.key === 1 || item.key === 5) ?
                                   <NativoAd {...this.props}
-                                            sectionUrl={sampleSectionUrl} 
+                                            sectionUrl={sampleSectionUrl}
                                             index={item.key}
                                             nativeAdTemplate={NativeAdTemplate}
                                             videoAdTemplate={NativeVideoAdTemplate}
-                                            standardDisplayAdTemplate={StandardDisplayAdTemplate }
+                                            standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                             onNativeAdClick={this.displayLandingPage}
                                             onDisplayAdClick={this.needsDisplayClickOutURL}
-                                            onNeedsRemoveAd={this.removeNativoAd} />
+                                            onNeedsRemoveAd={this.removeNativoAd}/>
                                   :
                                   <PublisherCard/>
                           }
