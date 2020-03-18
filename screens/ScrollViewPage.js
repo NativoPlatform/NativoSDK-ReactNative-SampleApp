@@ -46,13 +46,7 @@ export default class ScrollViewPage extends Component<Props> {
 
     removeNativoAd = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
-        // let filteredData = this.state.data;
-        // filteredData.splice(event.index, 1);
-        // this.setState({ data : filteredData });
     }
-
-    // ref={c => this._nodes.set(100, c)}
-    // ref={c => this._nodes.set(200, c)}
 
     render() {
         return (
@@ -80,7 +74,7 @@ export default class ScrollViewPage extends Component<Props> {
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd}
+                          onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
             </ScrollView>
         );
