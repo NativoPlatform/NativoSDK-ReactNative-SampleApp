@@ -70,7 +70,7 @@ export default class FlatListPage extends Component {
                                             standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                             onNativeAdClick={this.displayLandingPage}
                                             onDisplayAdClick={this.needsDisplayClickOutURL}
-                                            onNeedsRemoveAd={this.removeNativoAd}/>
+                                            onAdRemoved={this.removeNativoAd}/>
                                   :
                                   <PublisherCard/>
                           }

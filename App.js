@@ -63,7 +63,7 @@ export class App extends Component {
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd}/>
+                          onAdRemoved={this.removeNativoAd}/>
             </View>
         );
     }

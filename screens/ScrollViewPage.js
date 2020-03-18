@@ -74,7 +74,7 @@ export default class ScrollViewPage extends Component {
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd}
+                          onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
             </ScrollView>
         );
