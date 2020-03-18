@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import WebView from "react-native-webview";
 
-export default class ClickOutViewPage extends Component<props> {
+export default class ClickOutViewPage extends Component {
 
     static navigationOptions = {
         title: 'Click Out Page',

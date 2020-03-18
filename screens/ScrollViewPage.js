@@ -7,9 +7,9 @@ import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate"
 import {NativoAd} from "react-native-nativo-ads";
 import * as constant from "./../util/AppConstants"
 
-export default class ScrollViewPage extends Component<Props> {
+export default class ScrollViewPage extends Component {
 
-    constructor(props: P, context: any) {
+    constructor(props, context) {
         super(props, context);
         this._nodes = new Map();
     }
@@ -18,7 +18,7 @@ export default class ScrollViewPage extends Component<Props> {
         title: 'Scroll View Page',
     };
 
-    componentDidMount(): void {
+    componentDidMount() {
     }
 
     componentDidUpdate() {
@@ -62,7 +62,7 @@ export default class ScrollViewPage extends Component<Props> {
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onNeedsRemoveAd={this.removeNativoAd}
+                          onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
                 <PublisherCard/>
                 <PublisherCard/>
@@ -76,6 +76,7 @@ export default class ScrollViewPage extends Component<Props> {
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
+                <PublisherCard/>
             </ScrollView>
         );
     }
