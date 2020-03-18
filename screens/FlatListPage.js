@@ -48,7 +48,7 @@ export default class FlatListPage extends Component {
         this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
-    removeNativoAd = (event) => {
+    onNativoAdRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
         let filteredData = this.state.data;
         filteredData.splice(event.index - 1, 1);
@@ -70,7 +70,7 @@ export default class FlatListPage extends Component {
                                             standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                             onNativeAdClick={this.displayLandingPage}
                                             onDisplayAdClick={this.needsDisplayClickOutURL}
-                                            onAdRemoved={this.removeNativoAd}/>
+                                            onAdRemoved={this.onNativoAdRemoved}/>
                                   :
                                   <PublisherCard/>
                           }

@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, View, NativeModules} from 'react-native';
 import { NativoSDK } from 'react-native-nativo-ads';
+import * as constant from "./../util/AppConstants"
 
 export default class HomePage extends Component {
 
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDevLogs();
-        NativoSDK.enableTestAdvertisements(NativoSDK.AdTypes.NATIVE);
-        NativoSDK.prefetchAdForSection("pub.com", (error, adDidGetFill, section) => {
+        NativoSDK.enableTestAdvertisements();
+        NativoSDK.prefetchAdForSection(constant.sampleSectionUrl, (error, adDidGetFill, section) => {
             if (adDidGetFill) {
                 console.log("Got an ad: "+section);
             } else {
