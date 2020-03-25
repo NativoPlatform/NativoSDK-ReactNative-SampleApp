@@ -4,7 +4,7 @@ import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import {NativoAd} from "react-native-nativo-ads";
+import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import * as constant from "./../util/AppConstants"
 
 export default class ScrollViewPage extends Component {
@@ -12,6 +12,7 @@ export default class ScrollViewPage extends Component {
     constructor(props, context) {
         super(props, context);
         this._nodes = new Map();
+        NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
     }
 
     static navigationOptions = {

@@ -5,7 +5,7 @@ import NativeAdTemplate from "./adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "./adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "./adTemplates/StandardDisplayAdTemplate";
 import PublisherCard from "./publisherTemplate/PublisherCard";
-import {NativoAd} from "react-native-nativo-ads"
+import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "./util/AppConstants"
 
 
@@ -14,6 +14,7 @@ export class App extends Component {
     constructor(props) {
         super(props);
         this._nodes = new Map();
+        NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
     }
 
     componentDidMount() {
