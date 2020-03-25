@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
-import {NativoAd} from "react-native-nativo-ads";
+import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import * as constant from "./../util/AppConstants"
 
@@ -24,6 +24,7 @@ export default class FlatListPage extends Component {
             {key: 10},
         ];
         this.state = {data: data};
+        NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
     }
 
     static navigationOptions = {
