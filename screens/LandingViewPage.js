@@ -37,7 +37,7 @@ export default class LandingViewPage extends Component {
                     sectionUrl={sectionUrl}
                     containerHash={containerHash}
                     onClickExternalLink={(event)=> {
-                        navigation.navigate("ClickoutPage", { url: event.url });
+                        navigation.navigate("ClickOutScreen", { url: event.url });
                     }}
                     onFinishLoading={(event)=>{
                         if (event.error) {

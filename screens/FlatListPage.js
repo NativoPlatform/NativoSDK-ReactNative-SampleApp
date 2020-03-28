@@ -45,7 +45,6 @@ export default class FlatListPage extends Component {
     };
 
     displayLandingPage = (event) => {
-        console.log("displayLandingPage ", event);
         this.props.navigation.navigate('NativoLandingScreen', event);
     };
 

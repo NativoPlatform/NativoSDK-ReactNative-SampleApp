@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     videoCard: {
         borderWidth: 2,
         borderColor: '#23c9f5',
-        width: 400,
+        width: '100%',
         height: 380,
         padding: 10,
         marginBottom: 10,
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         margin: 0,
     },
     textRow: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     backgroundVideo: {
         position: 'absolute',

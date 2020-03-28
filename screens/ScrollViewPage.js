@@ -33,16 +33,7 @@ export default class ScrollViewPage extends Component {
     };
 
     displayLandingPage = (event) => {
-        console.log("displayLandingPage App.js ", event);
-        this.props.navigation.navigate('NativoLandingScreen', {
-            sectionUrl: event.sectionUrl,
-            adId: event.adId,
-            containerHash: event.containerHash,
-            adDescription: event.adDescription,
-            adTitle: event.adTitle,
-            adAuthorName: event.adAuthorName,
-            adDate: event.adDate,
-        })
+        this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
     removeNativoAd = (event) => {
