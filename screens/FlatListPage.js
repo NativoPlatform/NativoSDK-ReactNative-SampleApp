@@ -61,7 +61,7 @@ export default class FlatListPage extends Component {
                 <FlatList nativeID={'publisherNativoAdContainer'}
                           data={this.state.data}
                           renderItem={({item}) =>
-                              (item.key === 1 || item.key === 5) ?
+                              (item.key %2 === 1) ?
                                   <NativoAd {...this.props}
                                             sectionUrl={constant.sampleSectionUrl}
                                             index={item.key}

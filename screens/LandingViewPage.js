@@ -20,16 +20,16 @@ export default class LandingViewPage extends Component {
         const index = navigation.getParam('index');
         const sectionUrl = navigation.getParam('sectionUrl');
         const containerHash = navigation.getParam('containerHash');
-        const title = navigation.getParam('title');
-        const authorImgUrl = navigation.getParam('authorImgUrl');
+        const title = navigation.getParam('adTitle');
+        const authorImgUrl = navigation.getParam('adAuthorImgUrl');
         console.log("image url " + authorImgUrl);
-        const authorName = navigation.getParam('authorName');
+        const authorName = navigation.getParam('adAuthorName');
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.title}>{title}</Text>
                 <View style={styles.authorView}>
                     <Image source={{ uri: authorImgUrl }} style={styles.authorImage} resizeMode="contain"/>
-                    <Text style={styles.authorName}>By {authorName}</Text>
+                    <Text style={styles.authorName}>{authorName}</Text>
                 </View>
                 <NativoWebContent
                     style={{height:this.state.height}}
