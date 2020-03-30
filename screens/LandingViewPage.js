@@ -21,7 +21,7 @@ export default class LandingViewPage extends Component {
         const sectionUrl = navigation.getParam('sectionUrl');
         const containerHash = navigation.getParam('containerHash');
         const title = navigation.getParam('adTitle');
-        const authorImgUrl = navigation.getParam('adAuthorUrl');
+        const authorImgUrl = navigation.getParam('adAuthorImgUrl');
         console.log("image url " + authorImgUrl);
         const authorName = navigation.getParam('adAuthorName');
         return (
