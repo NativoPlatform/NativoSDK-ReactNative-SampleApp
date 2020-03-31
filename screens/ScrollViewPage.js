@@ -25,11 +25,8 @@ export default class ScrollViewPage extends Component {
     componentDidUpdate() {
     }
 
-    needsDisplayClickOutURL = (url) => {
-        console.log("needsDisplayClickOutURL App.js ", url);
-        this.props.navigation.navigate('ClickOutScreen', {
-            url: url,
-        })
+    needsDisplayClickOutURL = (event) => {
+        this.props.navigation.navigate('ClickOutScreen', event);
     };
 
     displayLandingPage = (event) => {

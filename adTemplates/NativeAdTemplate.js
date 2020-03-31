@@ -6,17 +6,17 @@ const NativeAdTemplate = (props) => {
         <View nativeID={'nativoAdView'} style={styles.nativeCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
             <Image style={styles.cardImage}
-                   nativeID={'articleImage'}/>
+                   nativeID={'adImage'}/>
             <View>
-                <Text nativeID={'articleDate'} style={{textAlign: 'right', height: 30}}>{props.adDate} </Text>
-                <Text editable={false} nativeID={'articleTitle'}
+                <Text nativeID={'adDate'} style={{textAlign: 'right', height: 30}}>{props.adDate} </Text>
+                <Text editable={false} nativeID={'adTitle'}
                       style={{textAlign: 'center', fontWeight: 'bold', height: 35}}>{props.adTitle}</Text>
-                <Text numberOfLines={2} multiline={true} editable={false} nativeID={'articleDescription'}
+                <Text numberOfLines={2} multiline={true} editable={false} nativeID={'adDescription'}
                       style={{textAlign: 'center', height: 50}}>{props.adDescription} </Text>
             </View>
             <View style={styles.textRow}>
-                <Image nativeID={'authorImage'} style={{height: 30, width: 30}}/>
-                <Text nativeID={'authorName'}>{props.adAuthorName}</Text>
+                <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30}}/>
+                <Text nativeID={'adAuthorName'}>{props.adAuthorName}</Text>
             </View>
         </View>
     );
