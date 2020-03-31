@@ -27,10 +27,9 @@ export class App extends Component {
         title: 'Nativo React Sample App',
     };
 
-    needsDisplayClickOutURL = (url) => {
-        console.log("needsDisplayClickOutURL App.js ", url);
+    needsDisplayClickOutURL = (event) => {
         this.props.navigation.navigate('ClickOutScreen', {
-            url: url,
+            url: event.url,
         })
     }
 
