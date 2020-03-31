@@ -25,24 +25,12 @@ export default class ScrollViewPage extends Component {
     componentDidUpdate() {
     }
 
-    needsDisplayClickOutURL = (url) => {
-        console.log("needsDisplayClickOutURL App.js ", url);
-        this.props.navigation.navigate('ClickOutScreen', {
-            url: url,
-        })
+    needsDisplayClickOutURL = (event) => {
+        this.props.navigation.navigate('ClickOutScreen', event);
     };
 
     displayLandingPage = (event) => {
-        console.log("displayLandingPage App.js ", event);
-        this.props.navigation.navigate('NativoLandingScreen', {
-            sectionUrl: event.sectionUrl,
-            adId: event.adId,
-            containerHash: event.containerHash,
-            adDescription: event.adDescription,
-            adTitle: event.adTitle,
-            adAuthorName: event.adAuthorName,
-            adDate: event.adDate,
-        })
+        this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
     removeNativoAd = (event) => {

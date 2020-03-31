@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {DeviceEventEmitter, StyleSheet, Text, View} from "react-native";
 import {NativoWebContent} from "react-native-nativo-ads";
 

@@ -35,17 +35,7 @@ export class App extends Component {
     }
 
     displayLandingPage = (event) => {
-        console.log("displayLandingPage App.js ", event);
-        this.props.navigation.navigate('NativoLandingScreen', {
-            sectionUrl: event.sectionUrl,
-            index: event.index,
-            containerHash: event.containerHash,
-            adDescription: event.adDescription,
-            title: event.adTitle,
-            authorName: event.adAuthorName,
-            adDate: event.adDate,
-            authorImgUrl: event.adAuthorUrl
-        })
+        this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
     removeNativoAd = (event) => {

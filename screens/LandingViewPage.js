@@ -22,7 +22,6 @@ export default class LandingViewPage extends Component {
         const containerHash = navigation.getParam('containerHash');
         const title = navigation.getParam('adTitle');
         const authorImgUrl = navigation.getParam('adAuthorImgUrl');
-        console.log("image url " + authorImgUrl);
         const authorName = navigation.getParam('adAuthorName');
         return (
             <ScrollView style={styles.container}>
@@ -37,7 +36,7 @@ export default class LandingViewPage extends Component {
                     sectionUrl={sectionUrl}
                     containerHash={containerHash}
                     onClickExternalLink={(event)=> {
-                        navigation.navigate("ClickoutPage", { url: event.url });
+                        navigation.navigate("ClickOutScreen", { url: event.url });
                     }}
                     onFinishLoading={(event)=>{
                         if (event.error) {
