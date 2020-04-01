@@ -1,6 +1,7 @@
 
 platform :ios, '9.0'
 source 'git@github.com:NativoPlatform/CocoaPods-Private-Specs.git'
+source 'https://cdn.cocoapods.org/'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'ReactSample' do
@@ -29,10 +30,8 @@ target 'ReactSample' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-
-  #pod 'NativoSDK', :path => "./NativoSDK-iOS/"
-
-  source 'git@github.com:NativoPlatform/CocoaPods-Private-Specs.git'
+  # NativoSDK
+  pod 'GoogleAds-IMA-iOS-SDK', '~> 3.9.2'
   pod 'NativoSDK', '~> 5.2.0-alpha'
 
   target 'ReactSampleTests' do

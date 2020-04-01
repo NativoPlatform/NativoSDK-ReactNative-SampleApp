@@ -23,10 +23,8 @@ const NativeAdTemplate = (props) => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
     nativeCard: {
+        flex: 1,
         borderWidth: 2,
         borderColor: '#23c9f5',
         padding: 10,
@@ -34,7 +32,7 @@ const styles = StyleSheet.create({
         elevation: 1
     },
     cardImage: {
-        height: 200,
+        height: 150,
     },
     textCenter: {
         padding: 0,

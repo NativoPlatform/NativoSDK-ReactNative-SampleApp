@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './App';
+import StandAlonePage from './screens/StandAlonePage';
 import {name as appName} from './app.json';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -16,7 +16,7 @@ import ClickOutViewPage from "./screens/ClickOutViewPage";
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
-    StandAloneAdScreen: {screen: App},
+    StandAloneAdScreen: {screen: StandAlonePage},
     FlatListAdScreen: {screen: FlatListPage},
     ScrollAdScreen: {screen: ScrollViewPage},
     NativoLandingScreen: {screen: LandingViewPage},
