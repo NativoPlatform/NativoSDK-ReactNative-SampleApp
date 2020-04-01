@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     card: {
-        width: 400,
+        width: '95%',
         height: 300,
         padding: 10,
         margin: 10,

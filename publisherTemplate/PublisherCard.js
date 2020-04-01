@@ -22,10 +22,6 @@ const PublisherCard = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center'
-    },
     card: {
         borderRadius: 1,
         flex: 1,
