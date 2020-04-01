@@ -27,20 +27,16 @@ const NativeVideoAdTemplate = (props) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
     videoCard: {
+        flex: 1,
         borderWidth: 2,
         borderColor: '#23c9f5',
-        width: '100%',
-        height: 380,
         padding: 10,
         marginBottom: 10,
         elevation: 1
     },
     video: {
-        height: 200,
+        height: 150,
     },
     textCenter: {
         padding: 0,

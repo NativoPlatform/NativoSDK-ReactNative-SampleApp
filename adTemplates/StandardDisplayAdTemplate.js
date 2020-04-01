@@ -21,14 +21,10 @@ function setCallbacks() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
     nativeCard: {
         borderWidth: 2,
         borderColor: '#23c9f5',
-        width: 400,
-        height: 300,
+        flex: 1,
         padding: 10,
         marginBottom: 10,
         elevation: 1,

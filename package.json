@@ -10,7 +10,7 @@
         "react": "16.8.6",
         "react-native": "0.60.5",
         "react-native-gesture-handler": "1.4.1",
-        "react-native-nativo-ads": "^0.1.4",
+        "react-native-nativo-ads": "^0.1.7",
         "react-native-screens": "1.0.0-alpha.23",
         "react-native-video": "5.0.2",
         "react-native-webview": "8.0.4",
