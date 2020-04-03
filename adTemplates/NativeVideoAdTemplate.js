@@ -5,7 +5,10 @@ import {NativoVideo} from "react-native-nativo-ads";
 const NativeVideoAdTemplate = (props) => {
     return (
         <View nativeID={'nativoVideoAdView'} style={styles.videoCard}>
-            <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
+            <View style={styles.textRow}>
+                <Text style={{color: '#1A1AFF', fontWeight: 'bold', flex: 1}}>Sponsored Content</Text>
+                <Image nativeID={'adChoicesImage'} style={{height: 20, width: 20}}/>
+            </View>
             <NativoVideo style={styles.video} />
             <View style={styles.textCenter}>
                 <Text nativeID={'adDate'}
