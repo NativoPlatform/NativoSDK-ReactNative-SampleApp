@@ -9,7 +9,9 @@ const NativeVideoAdTemplate = (props) => {
                 <Text style={{color: '#1A1AFF', fontWeight: 'bold', flex: 1}}>Sponsored Content</Text>
                 <Image nativeID={'adChoicesImage'} style={{height: 20, width: 20}}/>
             </View>
-            <NativoVideo style={styles.video} />
+            <View style={styles.video}>
+                <NativoVideo style={styles.video} />
+            </View>
             <View style={styles.textCenter}>
                 <Text nativeID={'adDate'}
                       style={{textAlign: 'right', height: 30}}>{props.adDate}</Text>
