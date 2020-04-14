@@ -14,6 +14,8 @@ To run the sample app do:
 1. At the project root run 
 ```bash
 npm install
+cd ios
+pod install
 ```
 This installs all dependencies including `react-native-nativo-ads` dependency
 
