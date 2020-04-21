@@ -30,9 +30,7 @@ target 'ReactSample' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  # NativoSDK
   pod 'GoogleAds-IMA-iOS-SDK', '~> 3.9.2'
-  pod 'NativoSDK', '~> 5.2.0-alpha'
 
   target 'ReactSampleTests' do
     inherit! :search_paths
