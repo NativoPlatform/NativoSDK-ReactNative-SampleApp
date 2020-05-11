@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, NativeModules} from 'react-native';
 
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
@@ -14,10 +14,12 @@ export class StandAlonePage extends Component {
     constructor(props) {
         super(props);
         this._nodes = new Map();
-        NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
     }
 
     componentDidMount() {
+        NativoSDK.clearAdsInSection(constant.dfpTestSectionUrl);
+        let DFPInitializer = NativeModules.DFPInitializer;
+        DFPInitializer.loadBanner();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -46,14 +48,15 @@ export class StandAlonePage extends Component {
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
                 <NativoAd style={styles.card}
-                          sectionUrl={constant.sampleSectionUrl}
+                          sectionUrl={constant.dfpTestSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
-                          onAdRemoved={this.removeNativoAd}/>
+                          onAdRemoved={this.removeNativoAd}
+                          enableDFPVersion={"7.27.0"} />
             </View>
         );
     }
