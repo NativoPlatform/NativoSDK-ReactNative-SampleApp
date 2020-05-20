@@ -11,6 +11,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - Google-Mobile-Ads-SDK (7.27.0)
   - GoogleAds-IMA-iOS-SDK (3.9.2)
   - NativoSDK (5.2.0)
   - React (0.60.5):
@@ -101,6 +102,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Google-Mobile-Ads-SDK (= 7.27.0)
   - GoogleAds-IMA-iOS-SDK (~> 3.9.2)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
@@ -129,6 +131,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Google-Mobile-Ads-SDK
     - GoogleAds-IMA-iOS-SDK
     - NativoSDK
 
@@ -191,6 +194,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   GoogleAds-IMA-iOS-SDK: 005e7670c266ee28ad72d730309f396ad7f440a0
   NativoSDK: 27f868f56280595a706c5e6518771b30de315995
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
@@ -217,6 +221,6 @@ SPEC CHECKSUMS:
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: 1096cfc65f2cae73723df5ee98586b1732b3a337
+PODFILE CHECKSUM: 59ad1ac4e0b1f0883d6f4c569c2887e782234d93
 
 COCOAPODS: 1.9.1
