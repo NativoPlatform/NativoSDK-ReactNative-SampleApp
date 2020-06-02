@@ -44,6 +44,7 @@ export class StandAlonePage extends Component {
     }
 
     render() {
+        let dfpVersion = Platform.OS === 'ios' ? '7.27.0' : '19.1.0';
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
@@ -56,7 +57,7 @@ export class StandAlonePage extends Component {
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onAdRemoved={this.removeNativoAd}
-                          enableDFPVersion={"7.27.0"} />
+                          enableDFPVersion={dfpVersion} />
             </View>
         );
     }
