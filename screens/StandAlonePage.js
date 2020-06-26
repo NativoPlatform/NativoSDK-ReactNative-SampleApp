@@ -56,7 +56,7 @@ export class StandAlonePage extends Component {
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.needsDisplayClickOutURL}
                           onAdRemoved={this.removeNativoAd}
-                          enableDFPVersion={"7.27.0"} />
+                          enableDFPVersion={"7.61.0"} />
             </View>
         );
     }
