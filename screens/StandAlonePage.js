@@ -44,7 +44,7 @@ export class StandAlonePage extends Component {
     }
 
     render() {
-        let dfpVersion = Platform.OS === 'ios' ? '7.27.0' : '19.1.0';
+        let dfpVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <PublisherCard/>
