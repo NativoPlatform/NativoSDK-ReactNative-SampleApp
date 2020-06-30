@@ -8,7 +8,7 @@ import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "../util/AppConstants"
 
 
-export default class StandAlonePage extends Component {
+export default class DFPSupportPage extends Component {
 
     constructor(props) {
         super(props);
@@ -16,14 +16,16 @@ export default class StandAlonePage extends Component {
     }
 
     componentDidMount() {
-        NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
+        NativoSDK.clearAdsInSection(constant.dfpTestSectionUrl);
+        let DFPInitializer = NativeModules.DFPInitializer;
+        DFPInitializer.loadBanner();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
     static navigationOptions = {
-        title: 'Standalone Ad Page',
+        title: 'DFP Ad Page',
     };
 
     displayClickOutURL = (event) => {
@@ -41,17 +43,19 @@ export default class StandAlonePage extends Component {
     }
 
     render() {
+        let dfpVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <NativoAd style={styles.card}
-                          sectionUrl={constant.sampleSectionUrl}
+                          sectionUrl={constant.dfpTestSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.displayClickOutURL}
-                          onAdRemoved={this.removeNativoAd} />
+                          onAdRemoved={this.removeNativoAd}
+                          enableDFPVersion={dfpVersion} />
             </View>
         );
     }
