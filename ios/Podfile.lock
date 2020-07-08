@@ -42,7 +42,7 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - NativoSDK (5.2.2-alpha.2)
+  - NativoSDK (5.2.2)
   - PromisesObjC (1.2.9)
   - React (0.60.5):
     - React-Core (= 0.60.5)
@@ -134,7 +134,7 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Mobile-Ads-SDK (= 7.61.0)
   - GoogleAds-IMA-iOS-SDK (= 3.11.3)
-  - NativoSDK (= 5.2.2-alpha.2)
+  - NativoSDK (~> 5.2.2)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
   - React-cxxreact (from `../node_modules/react-native/ReactCommon/cxxreact`)
@@ -160,8 +160,6 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  "git@github.com:NativoPlatform/CocoaPods-Private-Specs.git":
-    - NativoSDK
   trunk:
     - boost-for-react-native
     - Google-Mobile-Ads-SDK
@@ -169,6 +167,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
+    - NativoSDK
     - PromisesObjC
 
 EXTERNAL SOURCES:
@@ -235,7 +234,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  NativoSDK: 5ca94c725e8408225fa1c3ba119716d1e5d197a1
+  NativoSDK: 4195f3a4e9f715cd714dcf07da06046712eb851e
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
@@ -261,6 +260,6 @@ SPEC CHECKSUMS:
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: b963bc1bd99a7c6ff477808e80f6fac19e46b35f
+PODFILE CHECKSUM: 86d4e46e1add012776c6213d584b6f480239187a
 
 COCOAPODS: 1.9.3
