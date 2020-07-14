@@ -3,7 +3,7 @@
 //  ReactSample
 //
 //  Created by Matt Murray on 4/21/20.
-//  Copyright © 2020 Facebook. All rights reserved.
+//  Copyright © 2020 Nativo. All rights reserved.
 //
 
 #import "DFPInitializer.h"
