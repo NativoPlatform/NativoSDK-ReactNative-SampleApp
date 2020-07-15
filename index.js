@@ -18,12 +18,7 @@ import DFPSupportPage from './screens/DFPSupportPage';
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
-    StandAloneAdScreen: {screen: StandAlonePage},
-    FlatListAdScreen: {screen: FlatListPage},
-    ScrollAdScreen: {screen: ScrollViewPage},
-    NativoLandingScreen: {screen: LandingViewPage},
-    MOAPAdScreen: {screen: MOAPViewPage},
-    ClickOutScreen: {screen: ClickOutViewPage}
+    DFPAdScreen: {screen: DFPSupportPage},
 });
 
 const AppNavigation = createAppContainer(MainNavigator);

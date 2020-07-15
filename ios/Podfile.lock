@@ -89,7 +89,7 @@ PODS:
     - React-cxxreact (= 0.60.5)
     - React-jsi (= 0.60.5)
   - React-jsinspector (0.60.5)
-  - react-native-nativo-ads (0.2.0-alpha.1):
+  - react-native-nativo-ads (0.2.0):
     - NativoSDK
     - React
   - react-native-video (5.0.2):
@@ -243,7 +243,7 @@ SPEC CHECKSUMS:
   React-jsi: 4d8c9efb6312a9725b18d6fc818ffc103f60fec2
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
-  react-native-nativo-ads: d54ad751d1f746db156987ffac9d6a650f62b85d
+  react-native-nativo-ads: b041ea5f5a3045f3f4de6b8993a4c0604eef5067
   react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
   react-native-webview: 987e8c4a6faf5b9e45cf8e32beb98087953b8109
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
