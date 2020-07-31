@@ -37,7 +37,7 @@ export default class FlatListPage extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
-    needsDisplayClickOutURL = (event) => {
+    displayClickOutURL = (event) => {
         console.log("needsDisplayClickOutURL ", event.url);
         this.props.navigation.navigate('ClickOutScreen', {
             url: event.url,
@@ -69,7 +69,7 @@ export default class FlatListPage extends Component {
                                             videoAdTemplate={NativeVideoAdTemplate}
                                             standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                             onNativeAdClick={this.displayLandingPage}
-                                            onDisplayAdClick={this.needsDisplayClickOutURL}
+                                            onDisplayAdClick={this.displayClickOutURL}
                                             onAdRemoved={this.onNativoAdRemoved}/>
                                   :
                                   <PublisherCard/>

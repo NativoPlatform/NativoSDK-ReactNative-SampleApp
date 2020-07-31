@@ -27,7 +27,6 @@ const NativeAdTemplate = (props) => {
 
 const styles = StyleSheet.create({
     nativeCard: {
-        flex: 1,
         borderWidth: 2,
         borderColor: '#23c9f5',
         padding: 10,

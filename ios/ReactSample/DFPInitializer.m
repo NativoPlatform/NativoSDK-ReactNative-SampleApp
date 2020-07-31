@@ -3,7 +3,7 @@
 //  ReactSample
 //
 //  Created by Matt Murray on 4/21/20.
-//  Copyright © 2020 Facebook. All rights reserved.
+//  Copyright © 2020 Nativo. All rights reserved.
 //
 
 #import "DFPInitializer.h"
@@ -25,12 +25,17 @@ RCT_EXPORT_METHOD(loadBanner)
 {
   // Load data into DFPBannerView & start request
   NSLog(@"NativoSDK::DFP Loading DFP");
+  [self requestBanner];
+  
+}
+
+- (void)requestBanner {
   dispatch_async(dispatch_get_main_queue(), ^{
     self.rootVC = [[UIViewController alloc] init];
     self.dfpBanner = [[DFPBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake(3, 3))];
     [self.rootVC.view addSubview:self.dfpBanner];
     self.dfpBanner.adUnitID = @"/416881364/AdUnitSDK";
-    self.dfpBanner.validAdSizes = @[NSValueFromGADAdSize(GADAdSizeFromCGSize(CGSizeMake(3, 3))),      // Nativo ad size
+    self.dfpBanner.validAdSizes = @[NSValueFromGADAdSize(GADAdSizeFromCGSize(kGADAdSizeNativoDefault)),      // Nativo ad size
                                      NSValueFromGADAdSize(kGADAdSizeBanner)];  // Banner ad size
     self.dfpBanner.rootViewController = self.rootVC;
     self.dfpBanner.delegate = self;
@@ -40,10 +45,9 @@ RCT_EXPORT_METHOD(loadBanner)
     // Set custom targeting for Nativo on DFP request (Get from representative at Nativo)
     DFPRequest *request = [DFPRequest request];
     request.customTargeting = @{ @"ntvPlacement" : @"991150" };
-
+    
     [self.dfpBanner loadRequest:request];
   });
-
 }
 
 #pragma mark - GAD BannerViewDelegate
@@ -51,7 +55,7 @@ RCT_EXPORT_METHOD(loadBanner)
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     
     // Check size to determine what type of ad was returned
-    if (GADAdSizeEqualToSize(bannerView.adSize, GADAdSizeFromCGSize(CGSizeMake(3, 3)))) {
+    if (GADAdSizeEqualToSize(bannerView.adSize, GADAdSizeFromCGSize(kGADAdSizeNativoDefault))) {
         
         NSLog(@"NativoSDK::DFP Did recieve DFP Nativo ad");
         bannerView.hidden = YES;

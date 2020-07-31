@@ -25,7 +25,7 @@ export default class ScrollViewPage extends Component {
     componentDidUpdate() {
     }
 
-    needsDisplayClickOutURL = (event) => {
+    displayClickOutURL = (event) => {
         this.props.navigation.navigate('ClickOutScreen', event);
     };
 
@@ -50,7 +50,7 @@ export default class ScrollViewPage extends Component {
                           videoAdTemplate={VideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.needsDisplayClickOutURL}
+                          onDisplayAdClick={this.displayClickOutURL}
                           onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
                 <PublisherCard/>
@@ -62,7 +62,7 @@ export default class ScrollViewPage extends Component {
                           videoAdTemplate={VideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.needsDisplayClickOutURL}
+                          onDisplayAdClick={this.displayClickOutURL}
                           onAdRemoved={this.removeNativoAd}
                           style={styles.card}/>
                 <PublisherCard/>
