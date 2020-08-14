@@ -1,6 +1,5 @@
 
 platform :ios, '9.0'
-source 'git@github.com:NativoPlatform/CocoaPods-Private-Specs.git'
 source 'https://cdn.cocoapods.org/'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
