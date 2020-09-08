@@ -9,14 +9,6 @@ export default class HomePage extends Component {
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDevLogs();
-        // NativoSDK.enableTestAdvertisementsWithType(NativoSDK.AdTypes.NATIVE);
-        NativoSDK.prefetchAdForSection(constant.sampleSectionUrl, (error, adDidGetFill, section) => {
-            if (adDidGetFill) {
-                console.log("Got an ad: "+section);
-            } else {
-                console.log("No fill");
-            }
-        });
         YellowBox.ignoreWarnings(['Trying to load empty source']);
     }
 
@@ -28,20 +20,8 @@ export default class HomePage extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.buttonContainer}>
-                    <Button title={'StandAlone Ad Page'}
-                            onPress={() => this.props.navigation.navigate('StandAloneAdScreen')}/>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'FlatList Ad Page'}
-                            onPress={() => this.props.navigation.navigate('FlatListAdScreen')}/>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'Scroll Ad Page'}
-                            onPress={() => this.props.navigation.navigate('ScrollAdScreen')}/>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'MOAP Ad Page'}
-                            onPress={() => this.props.navigation.navigate('MOAPAdScreen')}/>
+                    <Button title={'DFP Ad Page'}
+                            onPress={() => this.props.navigation.navigate('DfpScreen')}/>
                 </View>
             </View>
         );
