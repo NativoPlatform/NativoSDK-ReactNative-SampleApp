@@ -42,7 +42,7 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - NativoSDK (5.2.5)
+  - NativoSDK (5.2.6)
   - PromisesObjC (1.2.9)
   - React (0.60.5):
     - React-Core (= 0.60.5)
@@ -234,7 +234,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  NativoSDK: d9dfd4e318d9a1f626a34b0f1b58adc959e41ef6
+  NativoSDK: a140138f766ff69022235d512ce1d7b04bf0ed29
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
@@ -262,4 +262,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b35644a9574304b9e651452cefb9674378402d2f
 
-COCOAPODS: 1.10.0.beta.2
+COCOAPODS: 1.9.3

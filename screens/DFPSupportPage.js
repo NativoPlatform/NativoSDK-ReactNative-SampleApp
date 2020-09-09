@@ -35,7 +35,8 @@ export default class DFPSupportPage extends Component {
     }
 
     displayLandingPage = (event) => {
-        this.props.navigation.navigate('NativoLandingScreen', event);
+        console.log("Display landing page");
+        this.props.navigation.navigate('LandingViewScreen', event);
     };
 
     removeNativoAd = (event) => {

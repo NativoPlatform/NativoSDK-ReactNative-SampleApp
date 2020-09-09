@@ -431,11 +431,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ReactSample/Pods-ReactSample-frameworks.sh",
 				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
 				"${PODS_ROOT}/NativoSDK/Framework/NativoSDK.framework",
+				"${PODS_ROOT}/NativoSDK/Framework/NativoSDK.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NativoSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/NativoSDK.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

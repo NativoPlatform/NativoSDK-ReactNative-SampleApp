@@ -19,6 +19,7 @@ import DFPSupportPage from './screens/DFPSupportPage';
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
     DFPAdScreen: {screen: DFPSupportPage},
+    LandingViewScreen: {screen : LandingViewPage}
 });
 
 const AppNavigation = createAppContainer(MainNavigator);
