@@ -37,10 +37,18 @@ export default class DFPSupportPage extends Component {
     displayLandingPage = (event) => {
         console.log("Display landing page");
         this.props.navigation.navigate('LandingViewScreen', event);
-    };
+    }
 
     removeNativoAd = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
+    }
+
+    adRendered = (event) => {
+        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
+    }
+
+    adRemoved = (event) => {
+        console.log("Removed ad: " + event.index + " " + event.sectionUrl);
     }
 
     render() {
@@ -49,13 +57,14 @@ export default class DFPSupportPage extends Component {
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <NativoAd style={styles.card}
                           sectionUrl={constant.dfpTestSectionUrl}
-                          index={10}
+                          index={reactTag}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.displayClickOutURL}
-                          onAdRemoved={this.removeNativoAd}
+                          onAdRendered={this.adRendered}
+                          onAdRemoved={this.adRemoved}
                           enableDFPVersion={dfpVersion} />
             </View>
         );
