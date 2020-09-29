@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, Image, ScrollView} from "react-native";
+import {StyleSheet, View, Text, Image, ScrollView, Button} from "react-native";
 import {NativoWebContent} from "react-native-nativo-ads";
 
 export default class LandingViewPage extends Component {
 
     constructor(props, context) {
         super(props, context);
+        this.webContentRef = React.createRef();
         this.state = {
             height:700
         };
@@ -29,8 +30,10 @@ export default class LandingViewPage extends Component {
                 <View style={styles.authorView}>
                     <Image source={{ uri: authorImgUrl }} style={styles.authorImage} resizeMode="contain"/>
                     <Text style={styles.authorName}>{authorName}</Text>
+                    <Button title="Share Btn" onPress={() => this.webContentRef.current.trackDidShare()}>Share</Button>
                 </View>
                 <NativoWebContent
+                    ref={this.webContentRef}
                     style={{height:this.state.height}}
                     index={index}
                     sectionUrl={sectionUrl}
@@ -43,6 +46,7 @@ export default class LandingViewPage extends Component {
                             console.log("There was an error: " + JSON.stringify(event.error));
                         } else {
                             this.setState({height: event.contentHeight});
+                            console.log("-- Share: "+JSON.stringify(event.shareUrl));
                         }
                     }} />
             </ScrollView>

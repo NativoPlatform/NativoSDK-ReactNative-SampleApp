@@ -18,7 +18,7 @@ const NativeAdTemplate = (props) => {
                       style={{textAlign: 'center', height: 50}}>{props.adDescription} </Text>
             </View>
             <View style={styles.textRow}>
-                <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30}}/>
+                <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30, marginRight: 5, resizeMode: "contain"}}/>
                 <Text nativeID={'adAuthorName'}>{props.adAuthorName}</Text>
             </View>
         </View>
