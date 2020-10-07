@@ -15,7 +15,8 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
-import net.nativo.reactsdk.ntvadapter.SharedNtvSectionAdapter;
+import net.nativo.reactsdk.ntvadapter.RNNtvSectionAdapter;
+import net.nativo.reactsdk.ntvadapter.RNNtvSectionAdapterManager;
 import net.nativo.reactsdk.ntvutil.ViewFinder;
 import net.nativo.sdk.NativoSDK;
 
@@ -63,7 +64,8 @@ public class DFPInitializer extends ReactContextBaseJavaModule {
                             if (mPublisherAdView.getAdSize().equals(ntvAdSize)) {
                                 // find the parent view using the below Util
                                 View parentView = ViewFinder.getInstance().findPublisherAdContainer(getCurrentActivity());
-                                NativoSDK.getInstance().makeDFPRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, DFP_SECTION_URL, index, SharedNtvSectionAdapter.getInstance());
+                                RNNtvSectionAdapter ntvSectionAdapter = RNNtvSectionAdapterManager.getInstance().getNtvSectionAdapter(DFP_SECTION_URL, index);
+                                NativoSDK.getInstance().makeDFPRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, DFP_SECTION_URL, index, ntvSectionAdapter);
                             } else {
                                 Log.d("DFP", "Did receive DFP banner ad");
                             }
