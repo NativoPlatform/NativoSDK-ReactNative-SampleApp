@@ -57,7 +57,7 @@ export default class DFPSupportPage extends Component {
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
                 <NativoAd style={styles.card}
                           sectionUrl={constant.dfpTestSectionUrl}
-                          index={reactTag}
+                          index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
