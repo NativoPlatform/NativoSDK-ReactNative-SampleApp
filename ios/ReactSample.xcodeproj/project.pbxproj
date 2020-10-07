@@ -219,6 +219,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				C3B2AF6172BD7A8509944A05 /* [CP] Embed Pods Frameworks */,
+				653D807D7B82A0C6101EF13F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,7 +273,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -400,6 +401,123 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		653D807D7B82A0C6101EF13F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReactSample/Pods-ReactSample-resources.sh",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/click-out-icon.ttf",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 10@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 11@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 12@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 13@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 14@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 15@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 16@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 17@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 18@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 19@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 1@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 20@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 21@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 22@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 23@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 24@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 25@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 26@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 27@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 28@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 29@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 2@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 30@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 31@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 32@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 33@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 34@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 35@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 36@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 37@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 38@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 39@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 3@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 40@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 41@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 42@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 43@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 44@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 4@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 5@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 6@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 7@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 8@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Layer 9@3x.png",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/NtvCollectionViewCell.xib",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/NtvTableViewCell.xib",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/NtvVideoControlsView.xib",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/pause.pdf",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/play.pdf",
+				"${PODS_ROOT}/../NativoSDK-iOS/NativoSDK/Resources/Resources.xcassets",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/click-out-icon.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 10@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 11@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 12@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 13@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 14@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 15@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 16@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 17@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 18@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 19@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 1@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 20@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 21@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 22@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 23@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 24@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 25@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 26@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 27@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 28@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 29@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 2@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 30@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 31@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 32@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 33@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 34@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 35@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 36@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 37@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 38@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 39@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 3@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 40@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 41@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 42@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 43@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 44@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 4@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 5@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 6@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 7@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 8@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Layer 9@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NtvCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NtvTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NtvVideoControlsView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pause.pdf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/play.pdf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactSample/Pods-ReactSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D435C784F6D543C751EBF93 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,14 +548,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ReactSample/Pods-ReactSample-frameworks.sh",
 				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
-				"${PODS_ROOT}/NativoSDK/Framework/NativoSDK.framework",
-				"${PODS_ROOT}/NativoSDK/Framework/NativoSDK.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NativoSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/NativoSDK.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,7 +714,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 7Z5P9C9T95;
 				INFOPLIST_FILE = ReactSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -621,7 +735,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7Z5P9C9T95;
 				INFOPLIST_FILE = ReactSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -744,6 +858,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -786,7 +901,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -797,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -832,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

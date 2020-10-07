@@ -20,26 +20,9 @@ export default class HomePage extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.buttonContainer}>
-                    <Button title={'StandAlone Ad Page'}
-                            onPress={() => this.props.navigation.navigate('StandAloneAdScreen')}/>
+                    <Button title={'DFP Ad Page'}
+                            onPress={() => this.props.navigation.navigate('DFPAdScreen')}/>
                 </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'FlatList Ad Page'}
-                            onPress={() => this.props.navigation.navigate('FlatListAdScreen')}/>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'Scroll Ad Page'}
-                            onPress={() => this.props.navigation.navigate('ScrollAdScreen')}/>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button title={'MOAP Ad Page'}
-                            onPress={() => this.props.navigation.navigate('MOAPAdScreen')}/>
-                </View>
-                {/*Uncomment to test with DFP*/}
-                {/*<View style={styles.buttonContainer}>*/}
-                {/*    <Button title={'DFP Ad Page'}*/}
-                {/*            onPress={() => this.props.navigation.navigate('DfpScreen')}/>*/}
-                {/*</View>*/}
             </View>
         );
     }

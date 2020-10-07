@@ -40,20 +40,20 @@ export default class DFPSupportPage extends Component {
     }
 
     displayLandingPage = (event) => {
+        console.log("Display landing page");
         this.props.navigation.navigate('NativoLandingScreen', event);
-    };
-
-    removeNativoAd = (event) => {
-        console.log("Remove me: " + event.index + " " + event.sectionUrl);
-    }
-
-    onAdRendered = (event) => {
-        console.log("ad rendered me: " + event.index + " " + event.sectionUrl);
     }
 
     callDFPLoadBanner = (index) => {
         console.log("callDFPLoadBanner me: " + index);
         DFPInitializer.loadBanner(index);
+    }
+    onAdRendered = (event) => {
+        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
+    }
+
+    onNativoAdRemoved = (event) => {
+        console.log("Removed ad: " + event.index + " " + event.sectionUrl);
     }
 
     render() {
