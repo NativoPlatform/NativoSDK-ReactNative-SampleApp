@@ -24,7 +24,8 @@ const MainNavigator = createStackNavigator({
     NativoLandingScreen: {screen: LandingViewPage},
     MOAPAdScreen: {screen: MOAPViewPage},
     ClickOutScreen: {screen: ClickOutViewPage},
-    DfpScreen: {screen: DFPSupportPage},
+    //uncomment to use DFP
+    /*DfpScreen: {screen: DFPSupportPage},*/
 });
 
 const AppNavigation = createAppContainer(MainNavigator);
