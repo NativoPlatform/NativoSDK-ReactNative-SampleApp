@@ -13,7 +13,6 @@ import ScrollViewPage from "./screens/ScrollViewPage";
 import LandingViewPage from "./screens/LandingViewPage";
 import MOAPViewPage from "./screens/MOAPViewPage";
 import ClickOutViewPage from "./screens/ClickOutViewPage";
-import DFPSupportPage from './screens/DFPSupportPage';
 
 
 const MainNavigator = createStackNavigator({

@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, View, Dimensions} from "react-native";
 import React from "react";
 
 
@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         height: 300,
         padding: 5,
         marginBottom: 5,
-        elevation: 1
+        elevation: 1,
+        width: Dimensions.get('window').width,
     },
     cardImage: {
         height: 200,
