@@ -47,7 +47,7 @@ export default class StandAlonePage extends Component {
     render() {
         return (
             <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
-                <NativoAd {...this.props}
+                <NativoAd style={styles.card}
                           sectionUrl={constant.sampleSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
