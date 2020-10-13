@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, NativeModules} from 'react-native';
-
+import {StyleSheet, View} from 'react-native';
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "../util/AppConstants"
+import styles from "./../util/Styles"
 
 
 export default class StandAlonePage extends Component {
@@ -46,8 +46,8 @@ export default class StandAlonePage extends Component {
 
     render() {
         return (
-            <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
-                <NativoAd style={styles.card}
+            <View style={{flex: 1}} nativeID={'publisherNativoAdContainer'}>
+                <NativoAd style={[styles.card, styles.sponsored]}
                           sectionUrl={constant.sampleSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
@@ -61,16 +61,3 @@ export default class StandAlonePage extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    card: {
-        width: '95%',
-        height: 300,
-        padding: 10,
-        margin: 10,
-        elevation: 1
-    }
-});

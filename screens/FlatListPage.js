@@ -6,6 +6,7 @@ import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate"
 import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import * as constant from "./../util/AppConstants"
+import commonStyles from "./../util/Styles"
 
 export default class FlatListPage extends Component {
 
@@ -67,7 +68,7 @@ export default class FlatListPage extends Component {
                           data={this.state.data}
                           renderItem={({item}) =>
                               (item.key % 2 === 1) ?
-                                  <NativoAd {...this.props}
+                                  <NativoAd style={[commonStyles.card, commonStyles.sponsored]}
                                             sectionUrl={constant.sampleSectionUrl}
                                             index={item.key}
                                             nativeAdTemplate={NativeAdTemplate}
@@ -79,7 +80,7 @@ export default class FlatListPage extends Component {
                                             onAdRemoved={this.adRemoved}
                                             extraTemplateProps={extraTemplateProps}/>
                                   :
-                                  <PublisherCard/>
+                                  <PublisherCard style={commonStyles.card} />
                           }
                           keyExtractor={(item, index) => index.toString()}
                 />
@@ -91,6 +92,7 @@ export default class FlatListPage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+        alignContent: 'center'
+    }
 });

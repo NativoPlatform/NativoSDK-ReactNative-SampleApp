@@ -3,9 +3,11 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
+import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import * as constant from "./../util/AppConstants"
-import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
+import styles from "./../util/Styles"
+
 
 export default class ScrollViewPage extends Component {
 
@@ -55,7 +57,7 @@ export default class ScrollViewPage extends Component {
                 {
                     this.state.data.map((item, key) => (
                         item % 2 === 1 ?
-                            <NativoAd key={key} {...this.props}
+                            <NativoAd key={key} style={[styles.card, styles.sponsored]}
                                       sectionUrl={constant.sampleSectionUrl}
                                       index={item}
                                       nativeAdTemplate={NativeAdTemplate}
@@ -67,7 +69,7 @@ export default class ScrollViewPage extends Component {
                                       onAdRemoved={this.adRemoved}
                                       extraTemplateProps={extraTemplateProps}/>
                             :
-                            <PublisherCard key={key}/>
+                            <PublisherCard key={key} style={styles.card}/>
                     ))
                 }
             </ScrollView>
@@ -75,16 +77,3 @@ export default class ScrollViewPage extends Component {
     }
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    card: {
-        width: '95%',
-        height: 300,
-        padding: 10,
-        margin: 10,
-        elevation: 1
-    }
-});
