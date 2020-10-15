@@ -1,5 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
+import styles from "./../util/Styles"
 
 const NativeAdTemplate = (props) => {
     return (
@@ -8,14 +9,14 @@ const NativeAdTemplate = (props) => {
                 <Text style={{color: '#1A1AFF', fontWeight: 'bold', flex: 1}}>Sponsored Content</Text>
                 <Image nativeID={'adChoicesImage'} style={{height: 20, width: 20}}/>
             </View>
-            <Image style={styles.cardImage}
+            <Image style={styles.media}
                    nativeID={'adImage'}/>
-            <View>
-                <Text nativeID={'adDate'} style={{textAlign: 'right', height: 30}}>{props.adDate} </Text>
+            <Text nativeID={'adDate'} style={{textAlign: 'right'}}>{props.adDate}</Text>
+            <View style={styles.descriptionRegion}>
                 <Text editable={false} nativeID={'adTitle'}
-                      style={{textAlign: 'center', fontWeight: 'bold', height: 35}}>{props.adTitle}</Text>
+                      style={styles.title}>{props.adTitle}</Text>
                 <Text numberOfLines={2} multiline={true} editable={false} nativeID={'adDescription'}
-                      style={{textAlign: 'center', height: 50}}>{props.adDescription} </Text>
+                      style={styles.description}>{props.adDescription} </Text>
             </View>
             <View style={styles.textRow}>
                 <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30}}/>
@@ -24,27 +25,5 @@ const NativeAdTemplate = (props) => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    nativeCard: {
-        borderWidth: 2,
-        borderColor: '#23c9f5',
-        padding: 10,
-        marginBottom: 10,
-        elevation: 1
-    },
-    cardImage: {
-        height: 150,
-    },
-    textCenter: {
-        padding: 0,
-        margin: 0,
-    },
-    textRow: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-
-});
 
 export default NativeAdTemplate;
