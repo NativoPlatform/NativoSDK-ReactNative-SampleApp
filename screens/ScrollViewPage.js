@@ -57,7 +57,7 @@ export default class ScrollViewPage extends Component {
                 {
                     this.state.data.map((item, key) => (
                         item % 2 === 1 ?
-                            <NativoAd key={key} style={[styles.card, styles.sponsored]}
+                            <NativoAd key={key} style={{width:'100%'}}
                                       sectionUrl={constant.sampleSectionUrl}
                                       index={item}
                                       nativeAdTemplate={NativeAdTemplate}

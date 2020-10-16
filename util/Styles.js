@@ -5,8 +5,6 @@ export default styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         width: (Dimensions.get('window').width-30),
-    },
-    nativeCard: {
         elevation: 1
     },
     sponsored: {

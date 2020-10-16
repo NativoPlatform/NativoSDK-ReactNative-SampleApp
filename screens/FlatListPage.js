@@ -68,8 +68,7 @@ export default class FlatListPage extends Component {
                           data={this.state.data}
                           renderItem={({item}) =>
                               (item.key % 2 === 1) ?
-                                  <NativoAd style={[commonStyles.card, commonStyles.sponsored]}
-                                            sectionUrl={constant.sampleSectionUrl}
+                                  <NativoAd sectionUrl={constant.sampleSectionUrl}
                                             index={item.key}
                                             nativeAdTemplate={NativeAdTemplate}
                                             videoAdTemplate={NativeVideoAdTemplate}
