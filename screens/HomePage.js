@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, View, NativeModules} from 'react-native';
-import { NativoSDK } from 'react-native-nativo-ads';
+import {NativoSDK} from 'react-native-nativo-ads';
 import * as constant from "./../util/AppConstants"
 import {YellowBox} from 'react-native';
 
@@ -9,14 +9,6 @@ export default class HomePage extends Component {
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDevLogs();
-        // NativoSDK.enableTestAdvertisementsWithType(NativoSDK.AdTypes.NATIVE);
-        NativoSDK.prefetchAdForSection(constant.sampleSectionUrl, (error, adDidGetFill, section) => {
-            if (adDidGetFill) {
-                console.log("Got an ad: "+section);
-            } else {
-                console.log("No fill");
-            }
-        });
         YellowBox.ignoreWarnings(['Trying to load empty source']);
     }
 

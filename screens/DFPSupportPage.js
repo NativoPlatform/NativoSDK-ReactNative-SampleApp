@@ -1,24 +1,29 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, NativeModules} from 'react-native';
+import {StyleSheet, View, NativeModules, FlatList} from 'react-native';
 
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "../util/AppConstants"
+import PublisherCard from "../publisherTemplate/PublisherCard";
 
+let DFPInitializer = NativeModules.DFPInitializer;
 
 export default class DFPSupportPage extends Component {
 
     constructor(props) {
         super(props);
         this._nodes = new Map();
+        let data = [];
+        for (let i = 0; i < 40; i++) {
+            data.push({key: i});
+        }
+        this.state = {data: data};
     }
 
     componentDidMount() {
         NativoSDK.clearAdsInSection(constant.dfpTestSectionUrl);
-        let DFPInitializer = NativeModules.DFPInitializer;
-        DFPInitializer.loadBanner();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -36,38 +41,53 @@ export default class DFPSupportPage extends Component {
 
     displayLandingPage = (event) => {
         console.log("Display landing page");
-        this.props.navigation.navigate('LandingViewScreen', event);
+        this.props.navigation.navigate('NativoLandingScreen', event);
     }
 
-    removeNativoAd = (event) => {
-        console.log("Remove me: " + event.index + " " + event.sectionUrl);
+    callDFPLoadBanner = (index) => {
+        console.log("callDFPLoadBanner me: " + index);
+        DFPInitializer.loadBanner(index);
     }
-
-    adRendered = (event) => {
+    onAdRendered = (event) => {
         console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
     }
 
-    adRemoved = (event) => {
+    onNativoAdRemoved = (event) => {
         console.log("Removed ad: " + event.index + " " + event.sectionUrl);
     }
 
     render() {
+        // let dfpSectionUrl = "https://app.bloomberg.com";
+        let dfpSectionUrl = "http://www.nativo.net/mobiledfptest";
         let dfpVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
+        let extraTemplateProps = {backgroundColor: 'blue'};
         return (
-            <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
-                <NativoAd style={styles.card}
-                          sectionUrl={constant.dfpTestSectionUrl}
-                          index={10}
-                          nativeAdTemplate={NativeAdTemplate}
-                          videoAdTemplate={NativeVideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.displayClickOutURL}
-                          onAdRendered={this.adRendered}
-                          onAdRemoved={this.adRemoved}
-                          enableDFPVersion={dfpVersion} />
+            <View style={styles.container}>
+                <FlatList nativeID={'publisherNativoAdContainer'}
+                          data={this.state.data}
+                          renderItem={({item}) => {
+                              if (item.key % 2 === 1) {
+                                  this.callDFPLoadBanner(item.key)
+                                  return <NativoAd {...this.props}
+                                                   sectionUrl={dfpSectionUrl}
+                                                   index={item.key}
+                                                   nativeAdTemplate={NativeAdTemplate}
+                                                   videoAdTemplate={NativeVideoAdTemplate}
+                                                   onAdRendered={this.onAdRendered}
+                                                   standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                                   onNativeAdClick={this.displayLandingPage}
+                                                   onDisplayAdClick={this.displayClickOutURL}
+                                                   onAdRemoved={this.onNativoAdRemoved}
+                                                   extraTemplateProps={extraTemplateProps}
+                                                   enableDFPVersion={dfpVersion}/>
+                              } else {
+                                  return <PublisherCard/>
+                              }
+                          }}
+                          keyExtractor={(item, index) => index.toString()}
+                />
             </View>
-        );
+        )
     }
 }
 
