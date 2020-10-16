@@ -26,10 +26,16 @@ export default styles = StyleSheet.create({
         fontWeight: 'bold', 
     },
     description: {
+        flex: 1,
         textAlign: 'left', 
     },
     textRow: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
+    },
+    date: {
+        textAlign: 'right', 
+        flex: 1
     }
 });

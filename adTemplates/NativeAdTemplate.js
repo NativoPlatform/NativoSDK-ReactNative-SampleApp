@@ -3,6 +3,8 @@ import {Image, Text, View} from "react-native";
 import styles from "./../util/Styles"
 
 const NativeAdTemplate = (props) => {
+    const date = new Date(props.adDate);
+    const dateFormatted = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
     return (
         <View nativeID={'nativoAdView'} style={styles.nativeCard}>
             <View style={styles.textRow}>
@@ -11,7 +13,6 @@ const NativeAdTemplate = (props) => {
             </View>
             <Image style={styles.media}
                    nativeID={'adImage'}/>
-            <Text nativeID={'adDate'} style={{textAlign: 'right'}}>{props.adDate}</Text>
             <View style={styles.descriptionRegion}>
                 <Text editable={false} nativeID={'adTitle'}
                       style={styles.title}>{props.adTitle}</Text>
@@ -21,6 +22,7 @@ const NativeAdTemplate = (props) => {
             <View style={styles.textRow}>
                 <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30}}/>
                 <Text nativeID={'adAuthorName'}>{props.adAuthorName}</Text>
+                <Text nativeID={'adDate'} style={styles.date}>{dateFormatted}</Text>
             </View>
         </View>
     );

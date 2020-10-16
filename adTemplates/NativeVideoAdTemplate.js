@@ -4,6 +4,8 @@ import {NativoVideo} from "react-native-nativo-ads";
 import styles from "./../util/Styles"
 
 const NativeVideoAdTemplate = (props) => {
+    const date = new Date(props.adDate);
+    const dateFormatted = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
     return (
         <View nativeID={'nativoVideoAdView'} style={styles.nativeCard}>
             <View style={styles.textRow}>
@@ -14,8 +16,6 @@ const NativeVideoAdTemplate = (props) => {
                 <NativoVideo style={styles.media} />
             </View>
             <View style={styles.descriptionRegion}>
-                <Text nativeID={'adDate'}
-                      style={{textAlign: 'left'}}>{props.adDate}</Text>
                 <Text nativeID={'adTitle'} style={styles.title}>{props.adTitle}</Text>
                 <Text numberOfLines={2} multiline={true} nativeID={'adDescription'}
                       style={styles.description}>{props.adDescription}</Text>
@@ -23,6 +23,7 @@ const NativeVideoAdTemplate = (props) => {
             <View style={styles.textRow}>
                 <Image nativeID={'adAuthorImage'} style={{height: 30, width: 30}}/>
                 <Text nativeID={'adAuthorName'}>{props.adAuthorName}</Text>
+                <Text nativeID={'adDate'} style={styles.date}>{dateFormatted}</Text>
             </View>
         </View>
     );
