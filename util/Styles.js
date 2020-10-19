@@ -30,7 +30,8 @@ export default styles = StyleSheet.create({
     textRow: {
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 10,
     },
     date: {
         textAlign: 'right', 
