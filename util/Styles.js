@@ -5,8 +5,6 @@ export default styles = StyleSheet.create({
         margin: 10,
         padding: 10,
         width: (Dimensions.get('window').width-30),
-    },
-    nativeCard: {
         elevation: 1
     },
     sponsored: {
@@ -26,10 +24,16 @@ export default styles = StyleSheet.create({
         fontWeight: 'bold', 
     },
     description: {
+        flex: 1,
         textAlign: 'left', 
     },
     textRow: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
+    },
+    date: {
+        textAlign: 'right', 
+        flex: 1
     }
 });
