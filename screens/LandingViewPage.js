@@ -19,12 +19,13 @@ export default class LandingViewPage extends Component {
         try {
             const adTitle = this.props.navigation.getParam('adTitle');
             const adShareUrl = this.props.navigation.getParam('adShareUrl');
+            const adID = this.props.navigation.getParam('adID');
             const result = await Share.share({
                 title: adTitle,
                 message: adShareUrl
             });
             if (result.action === Share.sharedAction) {
-                NativoSDK.trackShareActionForUrl(adShareUrl);
+                NativoSDK.trackShareActionForAd(adID);
             } else if (result.action === Share.dismissedAction) {
                 // dismissed
             }

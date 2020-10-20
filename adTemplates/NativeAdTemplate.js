@@ -6,7 +6,7 @@ const NativeAdTemplate = (props) => {
     const date = new Date(props.adDate);
     const dateFormatted = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
     return (
-        <View nativeID={'nativoAdView'} style={[styles.card, styles.sponsored]}>
+        <View style={[styles.card, styles.sponsored]}>
             <View style={styles.textRow}>
                 <Text style={{color: '#1A1AFF', fontWeight: 'bold', flex: 1}}>Sponsored Content</Text>
                 <Image nativeID={'adChoicesImage'} style={{height: 20, width: 20}}/>
