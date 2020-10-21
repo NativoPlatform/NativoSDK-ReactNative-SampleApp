@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, Image, ScrollView} from "react-native";
-import {NativoWebContent} from "react-native-nativo-ads";
+import {StyleSheet, View, Text, Image, ScrollView, TouchableOpacity, Share} from "react-native";
+import {NativoWebContent, NativoSDK} from "react-native-nativo-ads";
 
 export default class LandingViewPage extends Component {
 
@@ -15,6 +15,25 @@ export default class LandingViewPage extends Component {
         title: 'LandingPage',
     };
 
+    shareArticle = async () => {
+        try {
+            const adTitle = this.props.navigation.getParam('adTitle');
+            const adShareUrl = this.props.navigation.getParam('adShareUrl');
+            const adID = this.props.navigation.getParam('adID');
+            const result = await Share.share({
+                title: adTitle,
+                message: adShareUrl
+            });
+            if (result.action === Share.sharedAction) {
+                NativoSDK.trackShareActionForAd(adID);
+            } else if (result.action === Share.dismissedAction) {
+                // dismissed
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
     render() {
         const { navigation } = this.props;
         const index = navigation.getParam('index');
@@ -26,10 +45,16 @@ export default class LandingViewPage extends Component {
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.title}>{title}</Text>
-                <View style={styles.authorView}>
-                    <Image source={{ uri: authorImgUrl }} style={styles.authorImage} resizeMode="contain"/>
-                    <Text style={styles.authorName}>{authorName}</Text>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems:'center', width: '100%'}}>
+                    <View style={styles.authorView}>
+                        <Image source={{ uri: authorImgUrl }} style={styles.authorImage} resizeMode="contain"/>
+                        <Text style={styles.authorName}>{authorName}</Text>
+                    </View>
+                    <TouchableOpacity title="Share Btn" onPress={this.shareArticle}>
+                        <Image source={require('../img/share2.png')} style={styles.shareImg}></Image>
+                    </TouchableOpacity>
                 </View>
+                
                 <NativoWebContent
                     style={{height:this.state.height}}
                     index={index}
@@ -69,7 +94,11 @@ const styles = StyleSheet.create({
     authorView: {
         height: 50,
         flexDirection: 'row',
-        justifyContent: 'flex-start',
         alignItems: 'center'
     },
+    shareImg: {
+        width: 25,
+        height: 25,
+        marginRight: 20
+    }
 });
