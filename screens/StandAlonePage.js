@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, NativeModules} from 'react-native';
-
+import {StyleSheet, View} from 'react-native';
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
 import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "../util/AppConstants"
+import styles from "./../util/Styles"
 
 
 export default class StandAlonePage extends Component {
@@ -36,36 +36,27 @@ export default class StandAlonePage extends Component {
         this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
-    removeNativoAd = (event) => {
+    adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
+    }
+
+    adRendered = (event) => {
+        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
     }
 
     render() {
         return (
-            <View style={styles.container} nativeID={'publisherNativoAdContainer'}>
-                <NativoAd style={styles.card}
-                          sectionUrl={constant.sampleSectionUrl}
+            <View style={{flex: 1}} nativeID={'publisherNativoAdContainer'}>
+                <NativoAd sectionUrl={constant.sampleSectionUrl}
                           index={10}
                           nativeAdTemplate={NativeAdTemplate}
                           videoAdTemplate={NativeVideoAdTemplate}
+                          onAdRendered={this.adRendered}
                           standardDisplayAdTemplate={StandardDisplayAdTemplate}
                           onNativeAdClick={this.displayLandingPage}
                           onDisplayAdClick={this.displayClickOutURL}
-                          onAdRemoved={this.removeNativoAd} />
+                          onAdRemoved={this.adRemoved}/>
             </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    card: {
-        width: '95%',
-        height: 300,
-        padding: 10,
-        margin: 10,
-        elevation: 1
-    }
-});

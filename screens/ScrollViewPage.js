@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import NativeAdTemplate from "../adTemplates/NativeAdTemplate";
-import VideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate";
+import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import * as constant from "./../util/AppConstants"
+import styles from "./../util/Styles"
+
 
 export default class ScrollViewPage extends Component {
 
@@ -13,6 +15,12 @@ export default class ScrollViewPage extends Component {
         super(props, context);
         this._nodes = new Map();
         NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
+        let data = [];
+        for (let i = 0; i < 10; i++) {
+            data.push(i);
+        }
+        this.fakeItem = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        this.state = {data: data};
     }
 
     static navigationOptions = {
@@ -33,54 +41,39 @@ export default class ScrollViewPage extends Component {
         this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
-    removeNativoAd = (event) => {
+    adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
     }
 
+    adRendered = (event) => {
+        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
+    }
+
     render() {
+        let extraTemplateProps = {backgroundColor: 'blue'};
         return (
             <ScrollView contentContainerStyle={{flexGrow: 1, alignItems: 'center', justifyItems: 'center'}}
                         nativeID={'publisherNativoAdContainer'}>
-                <PublisherCard/>
-                <PublisherCard/>
-                <NativoAd {...this.props}
-                          sectionUrl={constant.sampleSectionUrl}
-                          index={100}
-                          nativeAdTemplate={NativeAdTemplate}
-                          videoAdTemplate={VideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.displayClickOutURL}
-                          onAdRemoved={this.removeNativoAd}
-                          style={styles.card}/>
-                <PublisherCard/>
-                <PublisherCard/>
-                <NativoAd {...this.props}
-                          sectionUrl={constant.sampleSectionUrl}
-                          index={200}
-                          nativeAdTemplate={NativeAdTemplate}
-                          videoAdTemplate={VideoAdTemplate}
-                          standardDisplayAdTemplate={StandardDisplayAdTemplate}
-                          onNativeAdClick={this.displayLandingPage}
-                          onDisplayAdClick={this.displayClickOutURL}
-                          onAdRemoved={this.removeNativoAd}
-                          style={styles.card}/>
-                <PublisherCard/>
+                {
+                    this.state.data.map((item, key) => (
+                        item % 2 === 1 ?
+                            <NativoAd key={key} style={{width:'100%'}}
+                                      sectionUrl={constant.sampleSectionUrl}
+                                      index={item}
+                                      nativeAdTemplate={NativeAdTemplate}
+                                      videoAdTemplate={NativeVideoAdTemplate}
+                                      onAdRendered={this.adRendered}
+                                      standardDisplayAdTemplate={StandardDisplayAdTemplate}
+                                      onNativeAdClick={this.displayLandingPage}
+                                      onDisplayAdClick={this.displayClickOutURL}
+                                      onAdRemoved={this.adRemoved}
+                                      extraTemplateProps={extraTemplateProps}/>
+                            :
+                            <PublisherCard key={key} style={styles.card}/>
+                    ))
+                }
             </ScrollView>
         );
     }
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    card: {
-        width: '95%',
-        height: 300,
-        padding: 10,
-        margin: 10,
-        elevation: 1
-    }
-});

@@ -7,6 +7,7 @@ import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate"
 import {NativoAd, NativoSDK} from "react-native-nativo-ads"
 import * as constant from "../util/AppConstants"
 import PublisherCard from "../publisherTemplate/PublisherCard";
+import styles from "../util/Styles"
 
 let DFPInitializer = NativeModules.DFPInitializer;
 
@@ -64,7 +65,7 @@ export default class DFPSupportPage extends Component {
         let dfpVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
         let extraTemplateProps = {backgroundColor: 'blue'};
         return (
-            <View style={styles.container}>
+            <View style={{flex:1}}>
                 <FlatList nativeID={'publisherNativoAdContainer'}
                           data={this.state.data}
                           windowSize={10}
@@ -82,7 +83,7 @@ export default class DFPSupportPage extends Component {
                                                    extraTemplateProps={extraTemplateProps}
                                                    enableDFPVersion={dfpVersion}/>
                               } else {
-                                  return <PublisherCard/>
+                                  return <PublisherCard style={styles.card}/>
                               }
                           }}
                           keyExtractor={(item, index) => index.toString()}
@@ -91,16 +92,3 @@ export default class DFPSupportPage extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    card: {
-        width: '95%',
-        height: 300,
-        padding: 10,
-        margin: 10,
-        elevation: 1
-    }
-});

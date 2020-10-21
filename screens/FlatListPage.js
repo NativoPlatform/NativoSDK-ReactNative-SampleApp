@@ -6,6 +6,7 @@ import StandardDisplayAdTemplate from "../adTemplates/StandardDisplayAdTemplate"
 import {NativoAd, NativoSDK} from "react-native-nativo-ads";
 import NativeVideoAdTemplate from "../adTemplates/NativeVideoAdTemplate";
 import * as constant from "./../util/AppConstants"
+import commonStyles from "./../util/Styles"
 
 export default class FlatListPage extends Component {
 
@@ -48,31 +49,37 @@ export default class FlatListPage extends Component {
         this.props.navigation.navigate('NativoLandingScreen', event);
     };
 
-    onNativoAdRemoved = (event) => {
+    adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
         let filteredData = this.state.data;
         filteredData.splice(event.index - 1, 1);
         this.setState({data: filteredData});
     }
 
+    adRendered = (event) => {
+        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
+    }
+
     render() {
+        let extraTemplateProps = {backgroundColor: 'blue'};
         return (
             <View style={styles.container}>
                 <FlatList nativeID={'publisherNativoAdContainer'}
                           data={this.state.data}
                           renderItem={({item}) =>
-                              (item.key %2 === 1) ?
-                                  <NativoAd {...this.props}
-                                            sectionUrl={constant.sampleSectionUrl}
+                              (item.key % 2 === 1) ?
+                                  <NativoAd sectionUrl={constant.sampleSectionUrl}
                                             index={item.key}
                                             nativeAdTemplate={NativeAdTemplate}
                                             videoAdTemplate={NativeVideoAdTemplate}
+                                            onAdRendered={this.adRendered}
                                             standardDisplayAdTemplate={StandardDisplayAdTemplate}
                                             onNativeAdClick={this.displayLandingPage}
                                             onDisplayAdClick={this.displayClickOutURL}
-                                            onAdRemoved={this.onNativoAdRemoved}/>
+                                            onAdRemoved={this.adRemoved}
+                                            extraTemplateProps={extraTemplateProps}/>
                                   :
-                                  <PublisherCard/>
+                                  <PublisherCard style={commonStyles.card} />
                           }
                           keyExtractor={(item, index) => index.toString()}
                 />
@@ -84,6 +91,7 @@ export default class FlatListPage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+        alignContent: 'center'
+    }
 });
