@@ -20,6 +20,9 @@ export default class DFPSupportPage extends Component {
             data.push({key: i});
         }
         this.state = {data: data};
+        for (let dfpIndex = 1; dfpIndex < 40; dfpIndex+=5) {
+            this.callDFPLoadBanner(dfpIndex);
+        }
     }
 
     componentDidMount() {
@@ -45,11 +48,10 @@ export default class DFPSupportPage extends Component {
     }
 
     callDFPLoadBanner = (index) => {
-        console.log("callDFPLoadBanner me: " + index);
         DFPInitializer.loadBanner(index);
     }
     onAdRendered = (event) => {
-        console.log("Ad has officially been rendered: " + event.index + " " + event.sectionUrl);
+        console.log("Ad has been rendered: " + event.index + " " + event.sectionUrl);
     }
 
     onNativoAdRemoved = (event) => {
@@ -65,11 +67,10 @@ export default class DFPSupportPage extends Component {
             <View style={styles.container}>
                 <FlatList nativeID={'publisherNativoAdContainer'}
                           data={this.state.data}
+                          windowSize={10}
                           renderItem={({item}) => {
-                              if (item.key % 2 === 1) {
-                                  this.callDFPLoadBanner(item.key)
-                                  return <NativoAd {...this.props}
-                                                   sectionUrl={dfpSectionUrl}
+                              if (item.key % 5 === 1) {
+                                  return <NativoAd sectionUrl={dfpSectionUrl}
                                                    index={item.key}
                                                    nativeAdTemplate={NativeAdTemplate}
                                                    videoAdTemplate={NativeVideoAdTemplate}
