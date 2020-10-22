@@ -17,7 +17,6 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ReactSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactSampleTests.m */; };
-		42EF9F25244F9EC20052EFBA /* DFPInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EF9F24244F9EC20052EFBA /* DFPInitializer.m */; };
 		5F4F16B0D2B6CA9432A4F7E7 /* libPods-ReactSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D6E543B02C210EDE64375 /* libPods-ReactSampleTests.a */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +53,6 @@
 		1BE31836429B35342924B3EA /* Pods-ReactSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactSample.debug.xcconfig"; path = "Target Support Files/Pods-ReactSample/Pods-ReactSample.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ReactSample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactSample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ReactSample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactSample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42EF9F23244F9EC20052EFBA /* DFPInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DFPInitializer.h; path = ReactSample/DFPInitializer.h; sourceTree = "<group>"; };
-		42EF9F24244F9EC20052EFBA /* DFPInitializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DFPInitializer.m; path = ReactSample/DFPInitializer.m; sourceTree = "<group>"; };
 		6049F1C68E769105D4D09028 /* libPods-ReactSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		692D6E543B02C210EDE64375 /* libPods-ReactSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F984F1894F174EC117E978 /* Pods-ReactSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactSample.release.xcconfig"; path = "Target Support Files/Pods-ReactSample/Pods-ReactSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				42EF9F23244F9EC20052EFBA /* DFPInitializer.h */,
-				42EF9F24244F9EC20052EFBA /* DFPInitializer.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -497,7 +492,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42EF9F25244F9EC20052EFBA /* DFPInitializer.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
