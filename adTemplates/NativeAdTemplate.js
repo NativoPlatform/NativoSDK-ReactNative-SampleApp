@@ -1,10 +1,11 @@
 import React from 'react';
 import {Image, Text, View} from "react-native";
 import styles from "./../util/Styles"
+import {GetFormattedDate} from "../util/AppUtils";
 
 const NativeAdTemplate = (props) => {
-    const date = new Date(props.adDate);
-    const dateFormatted = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
+    console.log("date now " + props.adDate);
+    const dateFormatted = GetFormattedDate("Dec 30 2018");
     return (
         <View style={[styles.card, styles.sponsored]}>
             <View style={styles.textRow}>

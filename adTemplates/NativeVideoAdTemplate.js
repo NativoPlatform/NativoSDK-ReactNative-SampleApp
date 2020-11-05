@@ -2,10 +2,10 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from "react-native";
 import {NativoVideo} from "react-native-nativo-ads";
 import styles from "./../util/Styles"
+import {GetFormattedDate} from "../util/AppUtils";
 
 const NativeVideoAdTemplate = (props) => {
-    const date = new Date(props.adDate);
-    const dateFormatted = date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear();
+    const dateFormatted = GetFormattedDate(props.adDate);
     return (
         <View style={[styles.card, styles.sponsored]}>
             <View style={styles.textRow}>
