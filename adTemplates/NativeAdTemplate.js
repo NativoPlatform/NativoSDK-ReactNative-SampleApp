@@ -4,8 +4,7 @@ import styles from "./../util/Styles"
 import {GetFormattedDate} from "../util/AppUtils";
 
 const NativeAdTemplate = (props) => {
-    console.log("date now " + props.adDate);
-    const dateFormatted = GetFormattedDate("Dec 30 2018");
+    const dateFormatted = GetFormattedDate(props.adDate);
     return (
         <View style={[styles.card, styles.sponsored]}>
             <View style={styles.textRow}>
