@@ -19,39 +19,8 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - Google-Mobile-Ads-SDK (7.61.0):
-    - GoogleAppMeasurement (~> 6.0)
   - GoogleAds-IMA-iOS-SDK (3.11.3)
-  - GoogleAppMeasurement (6.9.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/MethodSwizzler (~> 6.7)
-    - GoogleUtilities/Network (~> 6.7)
-    - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30906.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.7.2):
-    - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.7.2):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.7.2):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.7.2):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.7.2)"
-  - GoogleUtilities/Reachability (6.7.2):
-    - GoogleUtilities/Logger
-  - nanopb (1.30906.0):
-    - nanopb/decode (= 1.30906.0)
-    - nanopb/encode (= 1.30906.0)
-  - nanopb/decode (1.30906.0)
-  - nanopb/encode (1.30906.0)
-  - NativoSDK (5.3.0-alpha.2)
-  - PromisesObjC (1.2.11)
+  - NativoSDK (5.3.0)
   - RCTRequired (0.63.3)
   - RCTTypeSafety (0.63.3):
     - FBLazyVector (= 0.63.3)
@@ -218,7 +187,7 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
-  - react-native-nativo-ads (0.3.0-alpha.6):
+  - react-native-nativo-ads (0.3.0):
     - NativoSDK
     - React
   - react-native-safe-area-context (3.1.8):
@@ -304,9 +273,8 @@ DEPENDENCIES:
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - Google-Mobile-Ads-SDK (= 7.61.0)
   - GoogleAds-IMA-iOS-SDK (= 3.11.3)
-  - NativoSDK (~> 5.3.0-alpha.2)
+  - NativoSDK (~> 5.3.0)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -339,16 +307,10 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  "git@github.com:NativoPlatform/CocoaPods-Private-Specs.git":
-    - NativoSDK
   trunk:
     - boost-for-react-native
-    - Google-Mobile-Ads-SDK
     - GoogleAds-IMA-iOS-SDK
-    - GoogleAppMeasurement
-    - GoogleUtilities
-    - nanopb
-    - PromisesObjC
+    - NativoSDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -425,13 +387,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 7da9338acfb98d4ef9e5536805a0704572d33c2f
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
-  Google-Mobile-Ads-SDK: 4c3b24b04293b4bb370b2cb392cdd3ee97c87752
   GoogleAds-IMA-iOS-SDK: 134b35758455576aaa6b3d2d3146699dcf8af4f1
-  GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
-  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  NativoSDK: 9f89c495d31d6ba407fb21b590a6cb391bddc305
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  NativoSDK: f7a2126478197444c6a5e9ad60c162b2a19ac4bf
   RCTRequired: 48884c74035a0b5b76dbb7a998bd93bcfc5f2047
   RCTTypeSafety: edf4b618033c2f1c5b7bc3d90d8e085ed95ba2ab
   React: f36e90f3ceb976546e97df3403e37d226f79d0e3
@@ -442,7 +399,7 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
-  react-native-nativo-ads: cf220f4a341e5d77aeacb121f66b152b67ee1adc
+  react-native-nativo-ads: 37a54cc3195fc20e0b4420a090f500e2bfdf74a4
   react-native-safe-area-context: 01158a92c300895d79dee447e980672dc3fb85a6
   react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
   react-native-webview: 2e330b109bfd610e9818bf7865d1979f898960a7
@@ -461,6 +418,6 @@ SPEC CHECKSUMS:
   RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
 
-PODFILE CHECKSUM: cd05976e3867e3599171ec0e4d4651e007480fbe
+PODFILE CHECKSUM: 0aa1eb8c73e114c23c2f4a0257df270cdcd5652b
 
 COCOAPODS: 1.10.0
