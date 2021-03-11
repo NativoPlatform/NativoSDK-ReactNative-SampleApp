@@ -62,27 +62,27 @@ RCT_EXPORT_METHOD(loadBanner:(nonnull id)index)
         // Since 3x3 is the size of our Nativo ads, we pass this bannerView to Nativo where they will return the appropriate ad
         bannerView.hidden = YES;
         id index = objc_getAssociatedObject(bannerView, @selector(requestBanner:));
-        [NativoSDK makeDFPRequestWithBannerView:bannerView forSection:PublicationDomain atLocationIdentifier:index];
-        NSLog(@"NativoSDK: DFP Did recieve Nativo ad %@", index);
+        [NativoSDK makeGAMRequestWithBannerView:bannerView forSection:PublicationDomain atLocationIdentifier:index];
+        NSLog(@"NativoSDK: GAM Did recieve Nativo ad %@", index);
     } else {
-        NSLog(@"NativoSDK::DFP Did recieve DFP banner ad");
+        NSLog(@"NativoSDK::GAM Did recieve GAM banner ad");
         bannerView.hidden = NO;
     }
 }
 
 /// Tells the delegate that an ad request failed. The failure is normally due to network
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"NativoSDK: DFP Error - %@", error);
+    NSLog(@"NativoSDK: GAM Error - %@", error);
 }
 
 - (void)adView:(GADBannerView *)banner
 didReceiveAppEvent:(NSString *)name
       withInfo:(NSString *GAD_NULLABLE_TYPE)info {
-    NSLog(@"NativoSDK: DFP Banner Event: %@", name);
+    NSLog(@"NativoSDK: GAM Banner Event: %@", name);
 }
 
 - (void)adView:(GADBannerView *)bannerView willChangeAdSizeTo:(GADAdSize)size {
-    NSLog(@"NativoSDK: DFP Will change ad size: %@", NSStringFromCGSize(size.size));
+    NSLog(@"NativoSDK: GAM Will change ad size: %@", NSStringFromCGSize(size.size));
 }
 
 @end
