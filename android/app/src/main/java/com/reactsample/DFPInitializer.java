@@ -46,7 +46,7 @@ public class DFPInitializer extends ReactContextBaseJavaModule {
                 @Override
                 public void run() {
                     Log.d(getName(), "load banner called again");
-                    NativoSDK.getInstance().enableDFPRequestsWithVersion("19.0.2");
+                    //NativoSDK.enableDFPRequestsWithVersion("19.0.2");
                     PublisherAdView mPublisherAdView = new PublisherAdView(getCurrentActivity());
                     final AdSize ntvAdSize = new AdSize(3, 3);
                     mPublisherAdView.setAdSizes(ntvAdSize, AdSize.BANNER);
@@ -65,7 +65,7 @@ public class DFPInitializer extends ReactContextBaseJavaModule {
                                 // find the parent view using the below Util
                                 View parentView = ViewFinder.getInstance().findPublisherAdContainer(getCurrentActivity());
                                 RNNtvSectionAdapter ntvSectionAdapter = RNNtvSectionAdapterManager.getInstance().getNtvSectionAdapter(DFP_SECTION_URL, index);
-                                NativoSDK.getInstance().makeDFPRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, DFP_SECTION_URL, index, ntvSectionAdapter);
+                                NativoSDK.makeGAMRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, DFP_SECTION_URL, index, ntvSectionAdapter);
                             } else {
                                 Log.d("DFP", "Did receive DFP banner ad");
                             }
