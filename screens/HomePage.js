@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, StyleSheet, View, NativeModules} from 'react-native';
 import { NativoSDK } from 'react-native-nativo-ads';
 import * as constant from "./../util/AppConstants"
-import {YellowBox} from 'react-native';
+import {LogBox} from 'react-native';
 
 export default class HomePage extends Component {
 
@@ -17,7 +17,7 @@ export default class HomePage extends Component {
                 console.log("No fill");
             }
         });
-        YellowBox.ignoreWarnings(['Trying to load empty source']);
+        LogBox.ignoreWarnings(['Trying to load empty source']);
     }
 
     static navigationOptions = {
