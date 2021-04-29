@@ -17,7 +17,7 @@ export default class HomePage extends Component {
                 console.log("No fill");
             }
         });
-        LogBox.ignoreWarnings(['Trying to load empty source']);
+        LogBox.ignoreLogs(['Trying to load empty source']);
     }
 
     static navigationOptions = {
