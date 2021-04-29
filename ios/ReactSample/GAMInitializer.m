@@ -1,12 +1,12 @@
 //
-//  DFPInitializer.m
+//  GAMInitializer.m
 //  ReactSample
 //
 //  Created by Matt Murray on 4/21/20.
 //  Copyright © 2020 Nativo. All rights reserved.
 //
 
-#import "DFPInitializer.h"
+#import "GAMInitializer.h"
 #import <objc/runtime.h>
 #import <React/RCTLog.h>
 
@@ -14,11 +14,11 @@
 @import GoogleMobileAds;
 static NSString * const PublicationDomain = @"http://www.nativo.net/mobiledfptest";
 
-@interface DFPInitializer () <GADBannerViewDelegate, GADAdSizeDelegate, GADAppEventDelegate>
+@interface GAMInitializer () <GADBannerViewDelegate, GADAdSizeDelegate, GADAppEventDelegate>
 @property (nonatomic) UIViewController *rootVC;
 @end
 
-@implementation DFPInitializer
+@implementation GAMInitializer
 
 RCT_EXPORT_MODULE();
 

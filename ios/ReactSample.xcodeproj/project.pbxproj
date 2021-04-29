@@ -18,8 +18,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ReactSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactSampleTests.m */; };
-		420D3C8825FADA9400B4FF2D /* DFPInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 420D3C8725FADA9400B4FF2D /* DFPInitializer.m */; };
-		420D3C8925FADA9400B4FF2D /* DFPInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 420D3C8725FADA9400B4FF2D /* DFPInitializer.m */; };
+		420D3C8825FADA9400B4FF2D /* GAMInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 420D3C8725FADA9400B4FF2D /* GAMInitializer.m */; };
+		420D3C8925FADA9400B4FF2D /* GAMInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 420D3C8725FADA9400B4FF2D /* GAMInitializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		1BE31836429B35342924B3EA /* Pods-ReactSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactSample.debug.xcconfig"; path = "Target Support Files/Pods-ReactSample/Pods-ReactSample.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ReactSample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactSample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ReactSample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactSample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		420D3C8725FADA9400B4FF2D /* DFPInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DFPInitializer.m; path = ReactSample/DFPInitializer.m; sourceTree = "<group>"; };
-		420D3C8E25FADB4C00B4FF2D /* DFPInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DFPInitializer.h; path = ReactSample/DFPInitializer.h; sourceTree = "<group>"; };
+		420D3C8725FADA9400B4FF2D /* GAMInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GAMInitializer.m; path = ReactSample/GAMInitializer.m; sourceTree = "<group>"; };
+		420D3C8E25FADB4C00B4FF2D /* GAMInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAMInitializer.h; path = ReactSample/GAMInitializer.h; sourceTree = "<group>"; };
 		86F984F1894F174EC117E978 /* Pods-ReactSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactSample.release.xcconfig"; path = "Target Support Files/Pods-ReactSample/Pods-ReactSample.release.xcconfig"; sourceTree = "<group>"; };
 		B2A2B4B13C17F559CA80C5FE /* libPods-ReactSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED874D19781000CA11DCB7A /* Pods-ReactSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactSampleTests.release.xcconfig"; path = "Target Support Files/Pods-ReactSampleTests/Pods-ReactSampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				420D3C8E25FADB4C00B4FF2D /* DFPInitializer.h */,
-				420D3C8725FADA9400B4FF2D /* DFPInitializer.m */,
+				420D3C8E25FADB4C00B4FF2D /* GAMInitializer.h */,
+				420D3C8725FADA9400B4FF2D /* GAMInitializer.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -512,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420D3C8825FADA9400B4FF2D /* DFPInitializer.m in Sources */,
+				420D3C8825FADA9400B4FF2D /* GAMInitializer.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -522,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420D3C8925FADA9400B4FF2D /* DFPInitializer.m in Sources */,
+				420D3C8925FADA9400B4FF2D /* GAMInitializer.m in Sources */,
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
 			);

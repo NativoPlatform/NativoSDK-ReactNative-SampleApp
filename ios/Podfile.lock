@@ -50,7 +50,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - NativoSDK (6.0.0-alpha.4)
+  - NativoSDK (6.0.0-alpha.9)
   - PromisesObjC (1.2.12)
   - RCTRequired (0.63.3)
   - RCTTypeSafety (0.63.3):
@@ -218,7 +218,7 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
-  - react-native-nativo-ads (1.0.0-alpha.1):
+  - react-native-nativo-ads (0.4.0-alpha.4):
     - NativoSDK
     - React
   - react-native-safe-area-context (3.1.8):
@@ -430,7 +430,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  NativoSDK: 922bd7019182054426832fdb3e839a25ffd4f570
+  NativoSDK: 1c313475420ecb0b8009d0a929e61cea5d495ef8
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RCTRequired: 48884c74035a0b5b76dbb7a998bd93bcfc5f2047
   RCTTypeSafety: edf4b618033c2f1c5b7bc3d90d8e085ed95ba2ab
@@ -442,7 +442,7 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
-  react-native-nativo-ads: ba256600fb8602a328c20b65c95a7020c3f12720
+  react-native-nativo-ads: d1ef1ce099f2087c61e43028098aa92c03e456cd
   react-native-safe-area-context: 01158a92c300895d79dee447e980672dc3fb85a6
   react-native-video: 961749da457e73bf0b5565edfbaffc25abfb8974
   react-native-webview: 44b95e165b664abd71fb7a2daa3d4051e25702a6

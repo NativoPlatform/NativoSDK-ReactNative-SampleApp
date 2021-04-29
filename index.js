@@ -9,12 +9,12 @@ import {createStackNavigator} from 'react-navigation-stack';
 import HomePage from "./screens/HomePage";
 import LandingViewPage from "./screens/LandingViewPage";
 import ClickOutViewPage from "./screens/ClickOutViewPage";
-import DFPSupportPage from "./screens/DFPSupportPage";
+import GAMSupportPage from "./screens/GAMSupportPage";
 
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
-    DFPAdScreen: {screen: DFPSupportPage},
+    GAMAdScreen: {screen: GAMSupportPage},
     NativoLandingScreen: {screen: LandingViewPage},
     ClickOutScreen: {screen: ClickOutViewPage}
 });

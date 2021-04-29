@@ -22,19 +22,19 @@ import net.nativo.sdk.NativoSDK;
 
 import javax.annotation.Nonnull;
 
-public class DFPInitializer extends ReactContextBaseJavaModule {
+public class GAMInitializer extends ReactContextBaseJavaModule {
 
-    private static final String DFP_AD_UNIT_ID = "/416881364/AdUnitSDK";
-    private static final String DFP_SECTION_URL = "http://www.nativo.net/mobiledfptest";
+    private static final String GAM_AD_UNIT_ID = "/416881364/AdUnitSDK";
+    private static final String GAM_SECTION_URL = "http://www.nativo.net/mobiledfptest";
 
-    public DFPInitializer(@Nonnull ReactApplicationContext reactContext) {
+    public GAMInitializer(@Nonnull ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
     @Nonnull
     @Override
     public String getName() {
-        return "DFPInitializer";
+        return "GAMInitializer";
     }
 
     @ReactMethod
@@ -46,11 +46,10 @@ public class DFPInitializer extends ReactContextBaseJavaModule {
                 @Override
                 public void run() {
                     Log.d(getName(), "load banner called again");
-                    //NativoSDK.enableDFPRequestsWithVersion("19.0.2");
                     PublisherAdView mPublisherAdView = new PublisherAdView(getCurrentActivity());
                     final AdSize ntvAdSize = new AdSize(3, 3);
                     mPublisherAdView.setAdSizes(ntvAdSize, AdSize.BANNER);
-                    mPublisherAdView.setAdUnitId(DFP_AD_UNIT_ID);
+                    mPublisherAdView.setAdUnitId(GAM_AD_UNIT_ID);
                     // Create an ad request.
                     final PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
                             .addCustomTargeting("ntvPlacement", "1092187").build();
@@ -60,21 +59,21 @@ public class DFPInitializer extends ReactContextBaseJavaModule {
                         @Override
                         public void onAdLoaded() {
                             super.onAdLoaded();
-                            Log.d("DFP", "adUnit: " + mPublisherAdView.getAdUnitId() + " adSize: " + mPublisherAdView.getAdSize() + "index "+ index);
+                            Log.d("GAM", "adUnit: " + mPublisherAdView.getAdUnitId() + " adSize: " + mPublisherAdView.getAdSize() + "index "+ index);
                             if (mPublisherAdView.getAdSize().equals(ntvAdSize)) {
                                 // find the parent view using the below Util
                                 View parentView = ViewFinder.getInstance().findPublisherAdContainer(getCurrentActivity());
-                                RNNtvSectionAdapter ntvSectionAdapter = RNNtvSectionAdapterManager.getInstance().getNtvSectionAdapter(DFP_SECTION_URL, index);
-                                NativoSDK.makeGAMRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, DFP_SECTION_URL, index, ntvSectionAdapter);
+                                RNNtvSectionAdapter ntvSectionAdapter = RNNtvSectionAdapterManager.getInstance().getNtvSectionAdapter(GAM_SECTION_URL, index);
+                                NativoSDK.makeGAMRequestWithPublisherAdView(mPublisherAdView, (ViewGroup) parentView, GAM_SECTION_URL, index, ntvSectionAdapter);
                             } else {
-                                Log.d("DFP", "Did receive DFP banner ad");
+                                Log.d("GAM", "Did receive GAM banner ad");
                             }
                         }
 
                         @Override
                         public void onAdFailedToLoad(int errorCode) {
                             // Code to be executed when an ad request fails.
-                            Log.d("DFP", "onAdFailedToLoad: errorCode: " + errorCode);
+                            Log.d("GAM", "onAdFailedToLoad: errorCode: " + errorCode);
                         }
                     });
 

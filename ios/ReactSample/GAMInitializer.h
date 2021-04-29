@@ -1,5 +1,5 @@
 //
-//  DFPInitializer.h
+//  GAMInitializer.h
 //  ReactSample
 //
 //  Created by Matt Murray on 4/21/20.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DFPInitializer : NSObject <RCTBridgeModule>
+@interface GAMInitializer : NSObject <RCTBridgeModule>
 
 @end
 

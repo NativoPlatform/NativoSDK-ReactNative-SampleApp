@@ -9,9 +9,9 @@ import * as constant from "../util/AppConstants"
 import PublisherCard from "../publisherTemplate/PublisherCard";
 import styles from "../util/Styles"
 
-let DFPInitializer = NativeModules.DFPInitializer;
+let GAMInitializer = NativeModules.GAMInitializer;
 
-export default class DFPSupportPage extends Component {
+export default class GAMSupportPage extends Component {
 
     constructor(props) {
         super(props);
@@ -21,20 +21,20 @@ export default class DFPSupportPage extends Component {
             data.push({key: i});
         }
         this.state = {data: data};
-        for (let dfpIndex = 1; dfpIndex < 40; dfpIndex+=5) {
-            this.callDFPLoadBanner(dfpIndex);
+        for (let gamIndex = 1; gamIndex < 40; gamIndex+=5) {
+            this.callGAMLoadBanner(gamIndex);
         }
     }
 
     componentDidMount() {
-        NativoSDK.clearAdsInSection(constant.dfpTestSectionUrl);
+        NativoSDK.clearAdsInSection(constant.gamTestSectionUrl);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
     static navigationOptions = {
-        title: 'DFP Ad Page',
+        title: 'GAM Ad Page',
     };
 
     displayClickOutURL = (event) => {
@@ -48,8 +48,8 @@ export default class DFPSupportPage extends Component {
         this.props.navigation.navigate('NativoLandingScreen', event);
     }
 
-    callDFPLoadBanner = (index) => {
-        DFPInitializer.loadBanner(index);
+    callGAMLoadBanner = (index) => {
+        GAMInitializer.loadBanner(index);
     }
     onAdRendered = (event) => {
         console.log("Ad has been rendered: " + event.index + " " + event.sectionUrl);
@@ -60,9 +60,8 @@ export default class DFPSupportPage extends Component {
     }
 
     render() {
-        // let dfpSectionUrl = "https://app.bloomberg.com";
-        let dfpSectionUrl = "http://www.nativo.net/mobiledfptest";
-        let dfpVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
+        let gamSectionUrl = "http://www.nativo.net/mobiledfptest";
+        let gamVersion = Platform.OS === 'ios' ? '7.61.0' : '19.1.0';
         let extraTemplateProps = {backgroundColor: 'blue'};
         return (
             <View style={{flex:1}}>
@@ -71,7 +70,7 @@ export default class DFPSupportPage extends Component {
                           windowSize={10}
                           renderItem={({item}) => {
                               if (item.key % 5 === 1) {
-                                  return <NativoAd sectionUrl={dfpSectionUrl}
+                                  return <NativoAd sectionUrl={gamSectionUrl}
                                                    index={item.key}
                                                    nativeAdTemplate={NativeAdTemplate}
                                                    videoAdTemplate={NativeVideoAdTemplate}
@@ -81,7 +80,7 @@ export default class DFPSupportPage extends Component {
                                                    onDisplayAdClick={this.displayClickOutURL}
                                                    onAdRemoved={this.onNativoAdRemoved}
                                                    extraTemplateProps={extraTemplateProps}
-                                                   enableDFPVersion={dfpVersion}/>
+                                                   enableGAMVersion={gamVersion}/>
                               } else {
                                   return <PublisherCard style={styles.card}/>
                               }

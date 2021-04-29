@@ -18,7 +18,7 @@ public class ReactSamplePackage implements ReactPackage {
     @Nonnull
     @Override
     public List<NativeModule> createNativeModules(@Nonnull ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new DFPInitializer(reactContext));
+        return Arrays.<NativeModule>asList(new GAMInitializer(reactContext));
     }
 
     @Nonnull
