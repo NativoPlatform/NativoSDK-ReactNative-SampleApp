@@ -4,6 +4,7 @@ import {NativoWebContent} from "react-native-nativo-ads";
 import styles from "./../util/Styles"
 
 const StandardDisplayAdTemplate = (props) => {
+    console.log("extraTemplateProps: "+JSON.stringify(props.extraTemplateProps))
     return (
         <View style={styles.nativeCard}>
             <Text style={{color: '#1A1AFF', fontWeight: 'bold'}}>Sponsored Content</Text>
