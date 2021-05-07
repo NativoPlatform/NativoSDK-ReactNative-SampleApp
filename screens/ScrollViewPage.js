@@ -43,6 +43,9 @@ export default class ScrollViewPage extends Component {
 
     adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
+        let filteredData = this.state.data;
+        filteredData.splice(event.index - 1, 1);
+        this.setState({data: filteredData});
     }
 
     adRendered = (event) => {
