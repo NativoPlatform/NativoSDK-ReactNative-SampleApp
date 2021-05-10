@@ -13,16 +13,16 @@ export default class FlatListPage extends Component {
     constructor(props) {
         super(props);
         let data = [
-            {key: 1},
-            {key: 2},
-            {key: 3},
-            {key: 4},
-            {key: 5},
-            {key: 6},
-            {key: 7},
-            {key: 8},
-            {key: 9},
-            {key: 10},
+            {type: "article"},
+            {type: "nativo"},
+            {type: "article"},
+            {type: "nativo"},
+            {type: "article"},
+            {type: "nativo"},
+            {type: "article"},
+            {type: "nativo"},
+            {type: "article"},
+            {type: "nativo"},
         ];
         this.state = {data: data};
         NativoSDK.clearAdsInSection(constant.sampleSectionUrl);
@@ -51,9 +51,11 @@ export default class FlatListPage extends Component {
 
     adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
-        let filteredData = this.state.data;
-        filteredData.splice(event.index - 1, 1);
-        this.setState({data: filteredData});
+        if (this.state.data[event.index].type === "nativo") {
+            let filteredData = this.state.data;
+            filteredData.splice(event.index, 1);
+            this.setState({data: filteredData});
+        }
     }
 
     adRendered = (event) => {
@@ -66,10 +68,10 @@ export default class FlatListPage extends Component {
             <View style={styles.container}>
                 <FlatList nativeID={'publisherNativoAdContainer'}
                           data={this.state.data}
-                          renderItem={({item}) =>
-                              (item.key % 2 === 1) ?
+                          renderItem={({item, index}) =>
+                              (item.type === "nativo") ?
                                   <NativoAd sectionUrl={constant.sampleSectionUrl}
-                                            index={item.key}
+                                            index={index}
                                             nativeAdTemplate={NativeAdTemplate}
                                             videoAdTemplate={NativeVideoAdTemplate}
                                             onAdRendered={this.adRendered}
