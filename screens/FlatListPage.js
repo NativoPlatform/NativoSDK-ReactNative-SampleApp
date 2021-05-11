@@ -51,7 +51,9 @@ export default class FlatListPage extends Component {
 
     adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
-        if (this.state.data[event.index].type === "nativo") {
+        if (event.index > this.state.data.length-1) return;
+        let unit = this.state.data[event.index];
+        if (unit && unit.type === "nativo") {
             let filteredData = this.state.data;
             filteredData.splice(event.index, 1);
             this.setState({data: filteredData});
