@@ -19,7 +19,6 @@ export default class ScrollViewPage extends Component {
         for (let i = 0; i < 10; i++) {
             data.push(i);
         }
-        this.fakeItem = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         this.state = {data: data};
     }
 
@@ -43,6 +42,7 @@ export default class ScrollViewPage extends Component {
 
     adRemoved = (event) => {
         console.log("Remove me: " + event.index + " " + event.sectionUrl);
+        // invalid ads will auto-collapse in most circumstances
     }
 
     adRendered = (event) => {

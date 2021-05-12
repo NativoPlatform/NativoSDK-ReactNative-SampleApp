@@ -441,7 +441,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ReactSample/Pods-ReactSample-frameworks.sh",
 				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
-				"${PODS_ROOT}/NativoSDK/Framework/NativoSDK.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/NativoSDK/NativoSDK.framework/NativoSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

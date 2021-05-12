@@ -5,6 +5,7 @@ import {GetFormattedDate} from "../util/AppUtils";
 
 const NativeAdTemplate = (props) => {
     const dateFormatted = GetFormattedDate(props.adDate);
+    console.log("extraTemplateProps: "+JSON.stringify(props.extraTemplateProps));
     return (
         <View style={[styles.card, styles.sponsored]}>
             <View style={styles.textRow}>
