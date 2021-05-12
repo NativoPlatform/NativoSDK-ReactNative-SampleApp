@@ -1,5 +1,4 @@
 source 'https://cdn.cocoapods.org/'
-source 'git@github.com:NativoPlatform/CocoaPods-Private-Specs.git'
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
@@ -10,7 +9,7 @@ target 'ReactSample' do
   use_react_native!(:path => config["reactNativePath"])
 
   pod 'GoogleAds-IMA-iOS-SDK', '3.13.0'
-  pod 'NativoSDK', '~> 6.0.0-alpha.4'
+  pod 'NativoSDK', '~> 6.0.0'
 
   target 'ReactSampleTests' do
     inherit! :search_paths
