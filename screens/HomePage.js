@@ -9,7 +9,10 @@ export default class HomePage extends Component {
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDevLogs();
-        // NativoSDK.enableTestAdvertisementsWithType(NativoSDK.AdTypes.NATIVE);
+        NativoSDK.enableTestAdvertisements();
+
+        /*
+        // Uncomment to start prefetch
         NativoSDK.prefetchAdForSection(constant.sampleSectionUrl, (error, adDidGetFill, section) => {
             if (adDidGetFill) {
                 console.log("Got an ad: "+section);
@@ -17,6 +20,7 @@ export default class HomePage extends Component {
                 console.log("No fill");
             }
         });
+        */
         LogBox.ignoreLogs(['Trying to load empty source']);
     }
 
@@ -42,6 +46,10 @@ export default class HomePage extends Component {
                 <View style={styles.buttonContainer}>
                     <Button title={'MOAP Ad Page'}
                             onPress={() => this.props.navigation.navigate('MOAPAdScreen')}/>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button title={'GAM Ad Page'}
+                            onPress={() => this.props.navigation.navigate('GAMAdScreen')}/>
                 </View>
             </View>
         );

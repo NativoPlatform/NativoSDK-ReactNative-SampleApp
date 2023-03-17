@@ -14,9 +14,12 @@ import LandingViewPage from "./screens/LandingViewPage";
 import MOAPViewPage from "./screens/MOAPViewPage";
 import ClickOutViewPage from "./screens/ClickOutViewPage";
 
+import GAMSupportPage from "./screens/GAMSupportPage";
+
 
 const MainNavigator = createStackNavigator({
     HomePage: {screen: HomePage},
+    GAMAdScreen: {screen: GAMSupportPage},
     StandAloneAdScreen: {screen: StandAlonePage},
     FlatListAdScreen: {screen: FlatListPage},
     ScrollAdScreen: {screen: ScrollViewPage},
