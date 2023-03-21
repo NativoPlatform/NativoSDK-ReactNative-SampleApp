@@ -17,24 +17,18 @@ export default styles = StyleSheet.create({
     },
     descriptionRegion: {
         marginTop: 10,
-        marginBottom: 10
     },
     title: {
         textAlign: 'left', 
         fontWeight: 'bold', 
     },
     description: {
-        flex: 1,
         textAlign: 'left', 
     },
     textRow: {
-        flex: 1,
-        flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 10,
     },
     date: {
         textAlign: 'right', 
-        flex: 1
     }
 });

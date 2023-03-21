@@ -20,9 +20,9 @@ public class MainActivity extends ReactActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        NativoSDK.init(this);
+        //NativoSDK.init(this);
 
         // Use this instead if using GAM
-        //NativoSDK.initWithGAMVersion(this, "19.1.0");
+        NativoSDK.initWithGAMVersion(this, "19.1.0");
     }
 }

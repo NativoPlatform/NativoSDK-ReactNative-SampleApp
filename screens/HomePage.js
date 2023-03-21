@@ -9,9 +9,9 @@ export default class HomePage extends Component {
     constructor(props, context) {
         super(props, context);
         NativoSDK.enableDevLogs();
-        NativoSDK.enableTestAdvertisements();
+        NativoSDK.enableTestAdvertisementsWithType(NativoSDK.AdTypes.NATIVE);
 
-        /*
+        
         // Uncomment to start prefetch
         NativoSDK.prefetchAdForSection(constant.sampleSectionUrl, (error, adDidGetFill, section) => {
             if (adDidGetFill) {
@@ -20,7 +20,7 @@ export default class HomePage extends Component {
                 console.log("No fill");
             }
         });
-        */
+        
         LogBox.ignoreLogs(['Trying to load empty source']);
     }
 
